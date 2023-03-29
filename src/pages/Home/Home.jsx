@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom'
+import clsx from 'clsx'
 import { GithubOutlined, LinkedinOutlined, InstagramOutlined } from '@ant-design/icons'
 import style from './Home.module.scss'
 
 function Home() {
+    const fadeInUp = clsx(style.fadeInUp)
+    const fadeInDown = clsx(style.fadeInDown)
     return (
         <div className={style.home}>
             <div className={style.container}>
@@ -11,7 +14,7 @@ function Home() {
                         <h3>Minh</h3>
                         <h3>Quang</h3>
                     </div>
-                    <Link className={style.right} to="/contact">
+                    <Link className={style.right} to="/portfolio">
                         Contact with me
                     </Link>
                 </header>
@@ -19,15 +22,15 @@ function Home() {
             <div className={style.content}>
                 <div className={style.containerContent}>
                     <div className={style.contentLeft}>
-                        <h1>LUONG MINH QUANG</h1>
-                        <h4>
+                        <h1 className={fadeInUp}>LUONG MINH QUANG</h1>
+                        <h4 className={clsx(fadeInUp, style.fadeInUp2)}>
                             I AM A <strong>CODER</strong>
                         </h4>
-                        <p>
+                        <p className={clsx(fadeInUp, style.fadeInUp3)}>
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae nihil et aperiam expedita
                             exercitationem aliquam dolore quos quae maxime repellendus, animi minus architecto eligendi
                         </p>
-                        <div>
+                        <div className={clsx(fadeInUp, style.fadeInUp4)}>
                             <Link className={style.btnContactMe} to="/contact">
                                 Contact me
                             </Link>
@@ -35,7 +38,7 @@ function Home() {
                                 My information
                             </Link>
                         </div>
-                        <div className={style.contentLeftFooter}>
+                        <div className={clsx(style.contentLeftFooter, fadeInUp, style.fadeInUp5)}>
                             <a href="https://www.instagram.com/minhquang.luong.526/">
                                 <InstagramOutlined className={style.contentLeftIcon} />
                             </a>
@@ -48,7 +51,12 @@ function Home() {
                         </div>
                     </div>
                     <div className={style.contentRight}>
-                        <img src="" alt="" />
+                        <div className={clsx(style.contentRightImg, style.fadeInDown)}>
+                            <img
+                                src="https://lh3.googleusercontent.com/a/AGNmyxbtqG8lhAfRReRsV4YsnqeH4qYFCbvOJ63jXiaZ=s288"
+                                alt=""
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
