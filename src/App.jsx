@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import HomePage from './pages/Home/Home'
 import ContactPage from './pages/Contact'
-import AboutPage from './pages/About'
+import AboutPage from './pages/About/About'
 import PortfolioPage from './pages/Portfolio'
 
 function App() {

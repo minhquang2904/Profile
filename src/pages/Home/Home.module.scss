@@ -102,12 +102,21 @@
                     @include fontAldrich;
                 }
                 h4 {
+                    @include fontAldrich;
                     font-size: 3em;
                     font-weight: 500;
                     margin: 4px 0 0 0;
-                    @include fontAldrich;
-                    strong {
+                    display: flex;
+                    span {
+                        display: inline-block;
+                        overflow: hidden;
                         color: #9e00b0;
+                        font-weight: 900;
+                        border-right: 2px solid #9e00b0;
+                        width: 24%;
+                        height: 100%;
+                        animation: typing 2s 0.8s steps(5) infinite;
+                        margin-left: 8px;
                     }
                 }
                 p {
@@ -115,20 +124,6 @@
                     line-height: 1.6em;
                     color: #f0ebf5;
                     margin: 28px 0;
-                }
-                .btnContactMe {
-                    @include fontAldrich;
-                    display: inline-block;
-                    @include colorGradientCustom(right);
-                    max-width: 200px;
-                    padding: 12px 26px;
-                    font-size: 1.6em;
-                    color: $color-white;
-                    border-radius: 100px;
-                    margin-right: 20px;
-                    &:hover {
-                        @include colorGradientCustom(left);
-                    }
                 }
                 .myInformation {
                     @include fontOrbitron;
@@ -180,12 +175,17 @@
                     position: relative;
                     width: 300px;
                     height: 300px;
-                    img {
+                    .contentImage {
+                        background-image: url('https://lh3.googleusercontent.com/a/AGNmyxbtqG8lhAfRReRsV4YsnqeH4qYFCbvOJ63jXiaZ=s288');
                         position: absolute;
                         width: 100%;
                         height: 100%;
                         border-radius: 50%;
                         z-index: 1;
+                        transition: 0.6s ease;
+                        &:hover {
+                            background-position: center 10%;
+                        }
                     }
                     &:after {
                         @include colorGradientCustom(right);
@@ -198,7 +198,7 @@
                         height: 102%;
                         border-radius: 50%;
                         z-index: 0;
-                        filter: blur(80px);
+                        filter: blur(100px);
                     }
                     &:before {
                         background: linear-gradient(
@@ -213,8 +213,8 @@
                         top: 50%;
                         left: 50%;
                         transform: translate(-50%, -50%);
-                        width: 103%;
-                        height: 103%;
+                        width: 104%;
+                        height: 104%;
                         border-radius: 50%;
                         z-index: 0;
                         animation: spinColor 1s linear infinite;

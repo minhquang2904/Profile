@@ -28,3 +28,18 @@
         --rotate: 360deg;
     }
 }
+
+@keyframes cursor {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@keyframes typing {
+    0% {
+        width: 24%;
+    }
+    70% {
+        width: 0%;
+    }
+}
