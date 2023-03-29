@@ -1,19 +1,146 @@
 @import '../../variants.module.scss';
 .home {
+    $pd-16: 16px;
     display: flex;
+    min-height: 100vh;
+    position: relative;
     .container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
         margin: auto;
         max-width: $layout-maxWidth;
         width: 100%;
+        padding: 0 $pd-16;
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 16px;
+            padding: 16px 0;
             .left {
                 font-size: 2em;
-                font-weight: 800;
                 text-transform: uppercase;
+                color: $color-white;
+                h3 {
+                    @include fontOrbitron;
+                }
+                h3:first-child {
+                    font-weight: 900;
+                    background: -webkit-linear-gradient(
+                        left,
+                        #ff56f6 27.04%,
+                        #406aff 101.43%,
+                        #3bace2 100.63%,
+                        #b936ee 100%
+                    );
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+            .right {
+                @include colorGradientCustom(right);
+                padding: 12px 16px;
+                border-radius: 50px;
+                color: $color-white;
+                font-size: 1.6em;
+                cursor: pointer;
+                user-select: none;
+                font-weight: 600;
+                &:hover {
+                    @include colorGradientCustom(left);
+                }
+            }
+        }
+    }
+    .content {
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        max-width: $layout-maxWidth;
+        width: 100%;
+        padding: 0 $pd-16;
+        .containerContent {
+            display: flex;
+            margin: auto;
+            max-width: $layout-maxWidth;
+            width: 100%;
+            justify-content: space-between;
+            .contentLeft {
+                max-width: 50%;
+                flex: 0 0 50%;
+                color: $color-white;
+                h1 {
+                    font-size: 4.3em;
+                    margin: 0;
+                    font-weight: 900;
+                    @include fontAldrich;
+                }
+                h4 {
+                    font-size: 3em;
+                    font-weight: 500;
+                    margin: 4px 0 0 0;
+                    @include fontAldrich;
+                    strong {
+                        color: #9e00b0;
+                    }
+                }
+                p {
+                    font-size: 1.4em;
+                    line-height: 1.6em;
+                    color: #f0ebf5;
+                    margin: 28px 0;
+                }
+                .btnContactMe {
+                    @include fontAldrich;
+                    display: inline-block;
+                    @include colorGradientCustom(right);
+                    max-width: 200px;
+                    padding: 12px 26px;
+                    font-size: 1.6em;
+                    color: $color-white;
+                    border-radius: 100px;
+                    margin-right: 20px;
+                    &:hover {
+                        @include colorGradientCustom(left);
+                    }
+                }
+                .myInformation {
+                    @include fontOrbitron;
+                    text-transform: capitalize;
+                    font-weight: 900;
+                    background: -webkit-linear-gradient(
+                        left,
+                        #ff56f6 27.04%,
+                        #406aff 101.43%,
+                        #3bace2 100.63%,
+                        #b936ee 100%
+                    );
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    transition: 0.6s linear;
+                    font-size: 1.4em;
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
+                .contentLeftFooter {
+                    display: flex;
+                    margin-top: 40px;
+                    gap: 0 20px;
+                    a {
+                        text-decoration: none;
+                        .contentLeftIcon {
+                            font-size: 1.6em;
+                            color: $color-white;
+                        }
+                    }
+                }
+            }
+            .contentRight {
+                max-width: 50%;
+                flex: 0 0 50%;
             }
         }
     }
