@@ -16,3 +16,17 @@ body {
 a {
     text-decoration: none;
 }
+/*  191a28  9e00b0*/
+body::-webkit-scrollbar {
+    width: 4px;
+}
+body::-webkit-scrollbar-track {
+    background: #241348;
+}
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #ff56f6 27.04%, #406aff 101.43%, #3bace2 100.63%, #b936ee 100%);
+    border-radius: 110px;
+}
+body::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to top, #ff56f6 27.04%, #406aff 101.43%, #3bace2 100.63%, #b936ee 100%);
+}

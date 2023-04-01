@@ -1,6 +1,6 @@
 import { DownloadOutlined } from '@ant-design/icons'
 import style from './About.module.scss'
-import CV from '../../assets/CV_LuongMinhQuang.pdf'
+import { htmlLogo, cssLogo, scssLogo, reactLogo, jsLogo, nodejsLogo, cv } from '../../index'
 
 function About() {
     return (
@@ -45,7 +45,7 @@ function About() {
                                 </span>
                             </div>
                             <div className={style.contentHeaderButton}>
-                                <a className={style.contentHeaderMyCv} download="CV_LuongMinhQuang.pdf" href={CV}>
+                                <a className={style.contentHeaderMyCv} download="CV_LuongMinhQuang.pdf" href={cv}>
                                     <DownloadOutlined className={style.contentHeaderButtonIcon} />
                                     <span className={style.contentHeaderButtonLayout}>download cv</span>
                                     <span className={style.contentHeaderButtonTitle}>download cv</span>
@@ -63,7 +63,50 @@ function About() {
                             </div>
                         </div>
                     </div>
-                    <div className={style.contentBody}></div>
+                    <div className={style.contentLine}>
+                        <div></div>
+                    </div>
+                    <div className={style.contentBody}>
+                        <h1>My Skills</h1>
+                        <div className={style.contentBodySkills}>
+                            <div className={style.contentBodySkill}>
+                                <div className={style.contentBodyLogo}>
+                                    <img src={htmlLogo} alt="IMAGE" />
+                                </div>
+                                <h3>HTML5</h3>
+                            </div>
+                            <div className={style.contentBodySkill}>
+                                <div className={style.contentBodyLogo}>
+                                    <img src={cssLogo} alt="IMAGE" />
+                                </div>
+                                <h3>CSS3</h3>
+                            </div>
+                            <div className={style.contentBodySkill}>
+                                <div className={style.contentBodyLogo}>
+                                    <img src={scssLogo} alt="IMAGE" />
+                                </div>
+                                <h3>Scss</h3>
+                            </div>
+                            <div className={style.contentBodySkill}>
+                                <div className={style.contentBodyLogo}>
+                                    <img src={reactLogo} alt="IMAGE" />
+                                </div>
+                                <h3>react</h3>
+                            </div>
+                            <div className={style.contentBodySkill}>
+                                <div className={style.contentBodyLogo}>
+                                    <img src={jsLogo} alt="IMAGE" style={{ width: '56%', height: '56%' }} />
+                                </div>
+                                <h3>Javascript</h3>
+                            </div>
+                            <div className={style.contentBodySkill}>
+                                <div className={style.contentBodyLogo}>
+                                    <img src={nodejsLogo} alt="IMAGE" />
+                                </div>
+                                <h3>nodejs</h3>
+                            </div>
+                        </div>
+                    </div>
                     <div className={style.contentFooter}></div>
                 </div>
             </div>

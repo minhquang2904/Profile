@@ -83,7 +83,7 @@
                             &::before {
                                 border-radius: var(--borderRadius);
                                 @include colorGradientCustom(left);
-                                transition: 0.3s ease-in;
+                                transition: 0.2s linear;
                                 content: '';
                                 position: absolute;
                                 top: 0;
@@ -104,7 +104,7 @@
                                 }
                             }
                             .contentHeaderButtonIcon {
-                                transition: 0.3s ease-in;
+                                transition: 0.2s linear;
                                 @include colorGradientCustom(right);
                                 position: absolute;
                                 display: flex;
@@ -120,7 +120,7 @@
                                 stroke-width: 301px;
                             }
                             .contentHeaderButtonTitle {
-                                transition: 0.3s ease-in;
+                                transition: 0.2s linear;
                                 @include fontPoppins;
                                 font-weight: 700;
                                 font-size: 1.6em;
@@ -201,6 +201,83 @@
                                 height: 2px;
                                 background-color: #cccc;
                             }
+                        }
+                    }
+                }
+            }
+            .contentLine {
+                display: flex;
+                justify-content: center;
+                div {
+                    width: 50%;
+                    height: 1px;
+                    background-color: rgba(97, 97, 97, 0.2);
+                    margin: 80px 0;
+                    text-align: center;
+                    border-radius: 10px;
+                }
+            }
+            .contentBody {
+                h1 {
+                    text-align: center;
+                    font-size: 2.8em;
+                    color: $color-white;
+                    text-transform: uppercase;
+                    margin: 0 0 40px 0;
+                }
+                .contentBodySkills {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 30px 0;
+
+                    .contentBodySkill {
+                        flex: 0 0 25%;
+                        max-width: 25%;
+                        font-size: 2em;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        .contentBodyLogo {
+                            background-color: #191a28;
+                            width: 120px;
+                            height: 120px;
+                            position: relative;
+                            border-radius: 50%;
+                            margin-bottom: 14px;
+                            z-index: 1;
+                            transition: 0.3s ease;
+                            &:hover {
+                                transform: scale(1.08);
+                                &::before {
+                                    content: '';
+                                    @include colorGradientCustom(left);
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    width: 110%;
+                                    height: 110%;
+                                    filter: blur(120px);
+                                    z-index: -1;
+                                    border-radius: 50%;
+                                }
+                            }
+                            img {
+                                position: absolute;
+                                width: 76%;
+                                height: 76%;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                            }
+                        }
+                        h3 {
+                            text-align: center;
+                            font-size: 0.8em;
+                            text-transform: uppercase;
+                            color: $color-white;
+                            font-weight: 400;
                         }
                     }
                 }
