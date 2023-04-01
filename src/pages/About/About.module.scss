@@ -1,0 +1,210 @@
+@import '../../variants.module.scss';
+@import '../../animation.module';
+@property --rotate {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: true;
+}
+.about {
+    $pd-16: 16px;
+    display: flex;
+    .container {
+        margin: auto;
+        max-width: $layout-maxWidth;
+        width: 100%;
+        padding: 0 $pd-16;
+        display: flex;
+        flex-direction: column;
+        .header {
+            margin: auto;
+            padding: 80px 0;
+            .headerTitle {
+                span {
+                    @include fontPoppins;
+                    transform: translate(-50%, -50%);
+                    color: $color-black;
+                    font-size: 5.4em;
+                    text-align: center;
+                    color: $color-white;
+                    font-weight: 900;
+                    letter-spacing: 6px;
+                    &:last-child {
+                        @include colorTextGradient;
+                    }
+                }
+            }
+        }
+        .content {
+            .contentHeader {
+                display: flex;
+                .contentHeaderLeft {
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                    .contentHeaderTitle {
+                        font-size: 2.8em;
+                        margin-bottom: 24px;
+                        color: $color-white;
+                    }
+                    .contentHeaderInformation {
+                        display: flex;
+                        flex-direction: column;
+                        span {
+                            font-size: 1.6em;
+                            margin-bottom: 20px;
+                            font-weight: 500;
+                            color: $color-white;
+                            label {
+                                color: #cbcbcb;
+                            }
+                            strong {
+                                a {
+                                    color: $color-white;
+                                }
+                            }
+                        }
+                    }
+                    .contentHeaderButton {
+                        .contentHeaderMyCv {
+                            --borderRadius: 50px;
+                            --widthBorder: 58px;
+                            max-width: 230px;
+                            min-width: 230px;
+                            max-height: 60px;
+                            display: block;
+                            padding: 20px 26px;
+                            background-color: transparent;
+                            border: 1px solid #9e00b0;
+                            color: $color-white;
+                            position: relative;
+                            border-radius: var(--borderRadius);
+                            overflow: hidden;
+                            height: 100%;
+                            text-align: right;
+                            &::before {
+                                border-radius: var(--borderRadius);
+                                @include colorGradientCustom(left);
+                                transition: 0.3s ease-in;
+                                content: '';
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                bottom: 0;
+                                width: 58px;
+                            }
+                            &:hover::before {
+                                width: 100%;
+                            }
+                            &:hover {
+                                .contentHeaderButtonIcon {
+                                    border-radius: var(--borderRadius);
+                                    left: calc(100% - var(--widthBorder));
+                                }
+                                .contentHeaderButtonTitle {
+                                    right: 30%;
+                                }
+                            }
+                            .contentHeaderButtonIcon {
+                                transition: 0.3s ease-in;
+                                @include colorGradientCustom(right);
+                                position: absolute;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                top: 0;
+                                left: 0;
+                                font-size: 2em;
+                                width: var(--widthBorder);
+                                height: 58px;
+                                border-radius: 50% 50%;
+                                font-weight: 900;
+                                stroke-width: 301px;
+                            }
+                            .contentHeaderButtonTitle {
+                                transition: 0.3s ease-in;
+                                @include fontPoppins;
+                                font-weight: 700;
+                                font-size: 1.6em;
+                                text-transform: uppercase;
+                                user-select: none;
+                                position: absolute;
+                                right: 10%;
+                            }
+                            .contentHeaderButtonLayout {
+                                @include fontPoppins;
+                                font-weight: 700;
+                                font-size: 1.6em;
+                                text-transform: uppercase;
+                                visibility: hidden;
+                            }
+                        }
+                    }
+                }
+                .contentHeaderRight {
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    .contentHeaderRightItem {
+                        margin-bottom: 30px;
+                        padding: 40px;
+                        border-radius: 20px;
+                        position: relative;
+                        background-color: #191a28;
+                        &:before {
+                            --borderItem: 4px;
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width: calc(100% + var(--borderItem));
+                            height: calc(100% + var(--borderItem));
+                            z-index: -1;
+                            background-image: linear-gradient(
+                                var(--rotate),
+                                #ff56f6 27.04%,
+                                #406aff 101.43%,
+                                #3bace2 100.63%,
+                                #b936ee 100%
+                            );
+                            border-radius: inherit;
+                            animation: spinColor 5s linear infinite;
+                        }
+                        span:first-child {
+                            @include fontPoppins;
+                            @include colorTextGradient;
+                            margin: 0;
+                            font-weight: 700;
+                            font-size: 5em;
+                            display: flex;
+                            margin-bottom: 8px;
+                            &::after {
+                                content: '+';
+                                font-size: 34px;
+                            }
+                        }
+                        span:last-child {
+                            display: block;
+                            color: $color-white;
+                            padding-left: 50px;
+                            font-size: 1.5em;
+                            position: relative;
+                            letter-spacing: 4px;
+                            font-weight: 500;
+                            &::before {
+                                position: absolute;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                left: 0;
+                                content: '';
+                                width: 36px;
+                                height: 2px;
+                                background-color: #cccc;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
