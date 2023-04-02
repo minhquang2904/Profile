@@ -93,21 +93,30 @@
                     font-weight: 900;
                     @include fontAldrich;
                 }
-                h4 {
+                .subTitle {
                     @include fontAldrich;
-                    font-size: 3em;
-                    font-weight: 500;
                     margin: 4px 0 0 0;
                     display: flex;
-                    span {
-                        overflow: hidden;
-                        color: #9e00b0;
-                        font-weight: 900;
-                        border-right: 2px solid #9e00b0;
-                        width: 23%;
-                        height: 100%;
-                        animation: typing 2s 0.8s steps(5) infinite;
-                        margin-left: 8px;
+                    text-transform: uppercase;
+                    h4 {
+                        font-size: 2.6em;
+                        span {
+                            color: #9e00b0;
+                        }
+                    }
+                    // span::after {
+                    //     content: ' Front-end developer';
+                    //     display: inline;
+                    //     overflow: hidden;
+                    //     color: #9e00b0;
+                    //     font-weight: 900;
+                    //     border-right: 2px solid #9e00b0;
+                    //     height: 100%;
+                    //     width: 0%;
+                    //     animation: typing 2s steps(5) infinite;
+                    // }
+                    .delay {
+                        animation-delay: 0.8s;
                     }
                 }
                 p {

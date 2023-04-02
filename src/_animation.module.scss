@@ -37,9 +37,18 @@
 
 @keyframes typing {
     0% {
-        width: 23%;
+        width: 100%;
     }
     70% {
         width: 0%;
+    }
+}
+
+@keyframes flicker {
+    0% {
+        border-color: #9e00b0;
+    }
+    100% {
+        border-color: transparent;
     }
 }

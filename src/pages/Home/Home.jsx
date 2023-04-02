@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import clsx from 'clsx'
 import { GithubOutlined, LinkedinOutlined, InstagramOutlined } from '@ant-design/icons'
@@ -7,6 +8,39 @@ import style from './Home.module.scss'
 function Home() {
     const fadeInUp = clsx(style.fadeInUp)
     const fadeInDown = clsx(style.fadeInDown)
+    useEffect(() => {
+        let index = 0,
+            isAdding = true,
+            textTyping = document.querySelector('.typingText'),
+            text = ' Front-end developer'
+
+        function typing() {
+            setTimeout(() => {
+                textTyping.innerText = text.slice(0, index)
+                if (isAdding) {
+                    if (index > text.length) {
+                        setTimeout(() => {
+                            typing()
+                        }, 3000)
+                        isAdding = false
+                    } else {
+                        index++
+                        typing()
+                    }
+                } else {
+                    if (index == 0) {
+                        isAdding = true
+                    } else {
+                        index--
+                    }
+                    typing()
+                }
+            }, 100)
+        }
+        setTimeout(() => {
+            typing()
+        }, 800)
+    }, [])
     return (
         <div className={style.home}>
             <div className={style.container}>
@@ -24,9 +58,11 @@ function Home() {
                 <div className={style.containerContent}>
                     <div className={style.contentLeft}>
                         <h1 className={fadeInUp}>LUONG MINH QUANG</h1>
-                        <h4 className={clsx(fadeInUp, style.fadeInUp2)}>
-                            I AM A <span>CODER</span>
-                        </h4>
+                        <div className={clsx(fadeInUp, style.fadeInUp2, style.subTitle)}>
+                            <h4>
+                                I AM A <span className={clsx('typingText')}></span>
+                            </h4>
+                        </div>
                         <p className={clsx(fadeInUp, style.fadeInUp3)}>
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae nihil et aperiam expedita
                             exercitationem aliquam dolore quos quae maxime repellendus, animi minus architecto eligendi
