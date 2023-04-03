@@ -1,6 +1,7 @@
 import { DownloadOutlined } from '@ant-design/icons'
+import { MdOutlineWorkOutline } from 'react-icons/md'
 import style from './About.module.scss'
-import { htmlLogo, cssLogo, scssLogo, reactLogo, jsLogo, nodejsLogo, cv } from '../../index'
+import { htmlLogo, cssLogo, scssLogo, reactLogo, jsLogo, nodejsLogo, cv, bootstrap, jquery } from '../../index'
 
 function About() {
     return (
@@ -105,9 +106,108 @@ function About() {
                                 </div>
                                 <h3>nodejs</h3>
                             </div>
+                            <div className={style.contentBodySkill}>
+                                <div className={style.contentBodyLogo}>
+                                    <img src={bootstrap} alt="IMAGE" style={{ width: '70%', height: '70%' }} />
+                                </div>
+                                <h3>bootstrap</h3>
+                            </div>
+                            <div className={style.contentBodySkill}>
+                                <div className={style.contentBodyLogo}>
+                                    <img src={jquery} alt="IMAGE" style={{ width: '70%', height: '70%' }} />
+                                </div>
+                                <h3>jquery</h3>
+                            </div>
                         </div>
                     </div>
-                    <div className={style.contentFooter}></div>
+                    <div className={style.contentLine}>
+                        <div></div>
+                    </div>
+                    <div className={style.contentFooter}>
+                        <h1>EDUCATION & EXPERIENCE</h1>
+                        <div className={style.contentFooterYears}>
+                            <div className={style.contentFooterYearsLeft}>
+                                <div className={style.contentYear}>
+                                    <div className={style.contentYearIcons}>
+                                        <div className={style.contentYearIcon}>
+                                            <MdOutlineWorkOutline className={style.contentYearIconItem} />
+                                        </div>
+                                    </div>
+                                    <div className={style.contentYearTitle}>
+                                        <span>2016 - 2019</span>
+                                        <h2>THPT NGUYEN HUU THO</h2>
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum enim
+                                            tempore excepturi ratione nihil? A libero officiis, corrupti, saepe id
+                                            molestias cum rerum iusto, ex recusandae sunt velit quisquam quasi.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className={style.contentYear}>
+                                    <div className={style.contentYearIcons}>
+                                        <div className={style.contentYearIcon}>
+                                            <MdOutlineWorkOutline className={style.contentYearIconItem} />
+                                        </div>
+                                    </div>
+                                    <div className={style.contentYearTitle}>
+                                        <span>2016 - 2019</span>
+                                        <h2>THPT NGUYEN HUU THO</h2>
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum enim
+                                            tempore excepturi ratione nihil? A libero officiis, corrupti, saepe id
+                                            molestias cum rerum iusto, ex recusandae sunt velit quisquam quasi.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className={style.contentYear}>
+                                    <div className={style.contentYearIcons}>
+                                        <div className={style.contentYearIcon}>
+                                            <MdOutlineWorkOutline className={style.contentYearIconItem} />
+                                        </div>
+                                    </div>
+                                    <div className={style.contentYearTitle}>
+                                        <span>2016 - 2019</span>
+                                        <h2>THPT NGUYEN HUU THO</h2>
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum enim
+                                            tempore excepturi ratione nihil? A libero officiis, corrupti, saepe id
+                                            molestias cum rerum iusto, ex recusandae sunt velit quisquam quasi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={style.contentFooterYearsRight}>
+                                <div className={style.contentYear}>
+                                    <div className={style.contentYearIcons}>
+                                        <div className={style.contentYearIcon}>
+                                            <MdOutlineWorkOutline className={style.contentYearIconItem} />
+                                        </div>
+                                    </div>
+                                    <div className={style.contentYearTitle}>
+                                        <span>2016 - 2019</span>
+                                        <h2>THPT NGUYEN HUU THO</h2>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum enim</p>
+                                    </div>
+                                </div>
+                                <div className={style.contentYear}>
+                                    <div className={style.contentYearIcons}>
+                                        <div className={style.contentYearIcon}>
+                                            <MdOutlineWorkOutline className={style.contentYearIconItem} />
+                                        </div>
+                                    </div>
+                                    <div className={style.contentYearTitle}>
+                                        <span>2016 - 2019</span>
+                                        <h2>THPT NGUYEN HUU THO</h2>
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum enim
+                                            tempore excepturi ratione nihil? A libero officiis, corrupti, saepe id
+                                            molestias cum rerum iusto, ex recusandae sunt velit quisquam quasi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

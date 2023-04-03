@@ -98,23 +98,12 @@
                     margin: 4px 0 0 0;
                     display: flex;
                     text-transform: uppercase;
+                    font-size: 2.6em;
                     h4 {
-                        font-size: 2.6em;
                         span {
                             color: #9e00b0;
                         }
                     }
-                    // span::after {
-                    //     content: ' Front-end developer';
-                    //     display: inline;
-                    //     overflow: hidden;
-                    //     color: #9e00b0;
-                    //     font-weight: 900;
-                    //     border-right: 2px solid #9e00b0;
-                    //     height: 100%;
-                    //     width: 0%;
-                    //     animation: typing 2s steps(5) infinite;
-                    // }
                     .delay {
                         animation-delay: 0.8s;
                     }
@@ -142,13 +131,16 @@
                     gap: 0 20px;
                     a {
                         text-decoration: none;
-                        transition: 0.6s ease;
                         .contentLeftIcon {
+                            transition: 0.4s ease;
                             font-size: 1.6em;
                             color: $color-white;
                         }
                         &:hover {
-                            opacity: 0.8;
+                            .contentLeftIcon {
+                                color: rgb(216, 152, 223);
+                                transform: translateY(-3px);
+                            }
                         }
                     }
                 }

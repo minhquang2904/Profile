@@ -208,11 +208,12 @@
             .contentLine {
                 display: flex;
                 justify-content: center;
+                user-select: none;
                 div {
                     width: 50%;
                     height: 1px;
                     background-color: rgba(97, 97, 97, 0.2);
-                    margin: 80px 0;
+                    margin: 80px 0 55px 0;
                     text-align: center;
                     border-radius: 10px;
                 }
@@ -228,8 +229,7 @@
                 .contentBodySkills {
                     display: flex;
                     flex-wrap: wrap;
-                    gap: 30px 0;
-
+                    gap: 40px 0;
                     .contentBodySkill {
                         flex: 0 0 25%;
                         max-width: 25%;
@@ -278,6 +278,79 @@
                             text-transform: uppercase;
                             color: $color-white;
                             font-weight: 400;
+                        }
+                    }
+                }
+            }
+            .contentFooter {
+                h1 {
+                    text-align: center;
+                    font-size: 2.8em;
+                    color: $color-white;
+                    text-transform: uppercase;
+                    margin: 0 0 40px 0;
+                }
+                .contentFooterYears {
+                    --maxWidth: 45%;
+                    display: flex;
+                    justify-content: space-between;
+                    .contentFooterYearsLeft,
+                    .contentFooterYearsRight {
+                        flex: 0 0 var(--maxWidth);
+                        max-width: var(--maxWidth);
+                    }
+                    .contentYear {
+                        color: $color-white;
+                        display: flex;
+                        margin-bottom: 40px;
+                        .contentYearIcons {
+                            position: relative;
+                            margin-right: 20px;
+                            .contentYearIcon {
+                                @include colorGradientCustom(right);
+                                height: 50px;
+                                min-width: 50px;
+                                max-width: 50px;
+                                border-radius: 50%;
+                                display: flex;
+                                .contentYearIconItem {
+                                    margin: auto;
+                                    font-size: 2em;
+                                }
+                            }
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                bottom: 0px;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                width: 2px;
+                                height: calc(100% - 50px);
+                                background-color: rgba(211, 209, 209, 0.3);
+                            }
+                        }
+                        .contentYearTitle {
+                            @include fontPoppins;
+                            span {
+                                background-color: rgba(25, 26, 40, 0.5);
+                                padding: 8px 10px;
+                                border-radius: 20px;
+                                display: inline-flex;
+                                align-items: center;
+                                margin-bottom: 12px;
+                                font-size: 1.2em;
+                                font-weight: 600;
+                                color: #d3d1d1;
+                            }
+                            h2 {
+                                margin-bottom: 10px;
+                                font-size: 1.8em;
+                            }
+                            p {
+                                font-size: 1.4em;
+                                text-align: justify;
+                                line-height: 1.4em;
+                            }
                         }
                     }
                 }
