@@ -1,22 +1,46 @@
+import { useEffect } from 'react'
 import { DownloadOutlined } from '@ant-design/icons'
 import { MdOutlineWorkOutline } from 'react-icons/md'
 import style from './About.module.scss'
+import clsx from 'clsx'
 import { htmlLogo, cssLogo, scssLogo, reactLogo, jsLogo, nodejsLogo, cv, bootstrap, jquery } from '../../index'
 
 function About() {
+    useEffect(() => {
+        const contentBodySkill = document.getElementsByClassName(style.contentBodySkill)
+        const contentFooterYearsLeft = document.getElementsByClassName(style.contentFooterYearsLeft)
+        const contentFooterYearsRight = document.getElementsByClassName(style.contentFooterYearsRight)
+        const windowHeight = window.innerHeight
+        window.addEventListener('scroll', () => {
+            reveals(contentBodySkill, 120)
+            reveals(contentFooterYearsLeft, 0)
+            reveals(contentFooterYearsRight, 0)
+        })
+
+        function reveals(reveals, elementVisible) {
+            for (let i = 0; i < reveals.length; i++) {
+                const elementTop = reveals[i].getBoundingClientRect().top
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add(style.active)
+                } else {
+                    reveals[i].classList.remove(style.active)
+                }
+            }
+        }
+    }, [])
     return (
         <div className={style.about}>
             <div className={style.container}>
                 <header className={style.header}>
-                    <div className={style.headerTitle}>
-                        <span>ABOUT </span>
+                    <div className={clsx(style.fadeInUp, style.headerTitle)}>
+                        <span>About </span>
                         <span>ME</span>
                     </div>
                 </header>
                 <div className={style.content}>
                     <div className={style.contentHeader}>
-                        <div className={style.contentHeaderLeft}>
-                            <h3 className={style.contentHeaderTitle}>PERSONAL INFOS</h3>
+                        <div className={clsx(style.fadeInUpLeft, style.contentHeaderLeft)}>
+                            <h3 className={clsx(style.contentHeaderTitle)}>PERSONAL INFOS</h3>
                             <div className={style.contentHeaderInformation}>
                                 <span>
                                     <label>Name: </label>
@@ -53,7 +77,7 @@ function About() {
                                 </a>
                             </div>
                         </div>
-                        <div className={style.contentHeaderRight}>
+                        <div className={clsx(style.fadeInUpRight, style.contentHeaderRight)}>
                             <div className={style.contentHeaderRightItem}>
                                 <span>0</span>
                                 <span>YEARS OF EXPERIENCE</span>

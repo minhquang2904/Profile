@@ -20,6 +20,28 @@
     }
 }
 
+@keyframes fadeInUpLeft {
+    from {
+        transform: translate(-50px, 50px);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUpRight {
+    from {
+        transform: translate(50px, 50px);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
 @keyframes spinColor {
     from {
         --rotate: 0deg;

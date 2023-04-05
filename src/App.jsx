@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import HomePage from './pages/Home/Home'
-import ContactPage from './pages/Contact'
+import ContactPage from './pages/Contact/Contact'
 import AboutPage from './pages/About/About'
 import PortfolioPage from './pages/Portfolio'
 

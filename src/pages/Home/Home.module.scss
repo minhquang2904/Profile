@@ -68,8 +68,8 @@
             width: 100%;
             justify-content: space-between;
             .contentLeft {
-                max-width: 50%;
-                flex: 0 0 50%;
+                @include customFlex50;
+                padding-right: $pd-16;
                 color: $color-white;
                 .fadeInUp {
                     animation: fadeInUp 0.8s ease-in-out forwards;
@@ -88,7 +88,7 @@
                     animation-delay: 0.4s;
                 }
                 h1 {
-                    font-size: 4.3em;
+                    font-size: 4.2em;
                     margin: 0;
                     font-weight: 900;
                     @include fontAldrich;
@@ -146,8 +146,8 @@
                 }
             }
             .contentRight {
-                max-width: 50%;
-                flex: 0 0 50%;
+                @include customFlex50;
+                padding-left: $pd-16;
                 display: flex;
                 justify-content: flex-end;
                 user-select: none;

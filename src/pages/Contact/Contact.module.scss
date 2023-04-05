@@ -1,0 +1,33 @@
+@import '../../variants.module.scss';
+@import '../../animation.module';
+@property --rotate {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: true;
+}
+.contact {
+    $pd-16: 16px;
+    display: flex;
+    .container {
+        margin: auto;
+        max-width: $layout-maxWidth;
+        width: 100%;
+        padding: 0 $pd-16;
+        display: flex;
+        flex-direction: column;
+        .header {
+            @include customHeaderTitle;
+        }
+        .content {
+            display: flex;
+            &HeaderLeft {
+                @include customFlex50;
+                padding-right: $pd-16;
+            }
+            &HeaderRight {
+                @include customFlex50;
+                padding-left: $pd-16;
+            }
+        }
+    }
+}

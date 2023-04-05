@@ -12,6 +12,7 @@ body {
     font-family: 'Roboto', sans-serif;
     min-height: 100vh;
     font-size: 62.5%;
+    overflow: auto;
 }
 a {
     text-decoration: none;
@@ -19,6 +20,7 @@ a {
 /*  191a28  9e00b0*/
 body::-webkit-scrollbar {
     width: 4px;
+    height: 4px;
 }
 body::-webkit-scrollbar-track {
     background: #241348;

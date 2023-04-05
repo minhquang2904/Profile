@@ -16,30 +16,14 @@
         display: flex;
         flex-direction: column;
         .header {
-            margin: auto;
-            padding: 80px 0;
-            .headerTitle {
-                span {
-                    @include fontPoppins;
-                    transform: translate(-50%, -50%);
-                    color: $color-black;
-                    font-size: 5.4em;
-                    text-align: center;
-                    color: $color-white;
-                    font-weight: 900;
-                    letter-spacing: 6px;
-                    &:last-child {
-                        @include colorTextGradient;
-                    }
-                }
-            }
+            @include customHeaderTitle;
         }
         .content {
-            .contentHeader {
+            &Header {
                 display: flex;
-                .contentHeaderLeft {
-                    flex: 0 0 50%;
-                    max-width: 50%;
+                &Left {
+                    @include customFlex50;
+                    padding-right: $pd-16;
                     .contentHeaderTitle {
                         font-size: 2.8em;
                         margin-bottom: 24px;
@@ -139,9 +123,9 @@
                         }
                     }
                 }
-                .contentHeaderRight {
-                    flex: 0 0 50%;
-                    max-width: 50%;
+                &Right {
+                    @include customFlex50;
+                    padding-left: $pd-16;
                     display: flex;
                     flex-direction: column;
                     .contentHeaderRightItem {
@@ -238,6 +222,14 @@
                         justify-content: center;
                         align-items: center;
                         flex-direction: column;
+                        opacity: 0;
+                        transition: 0.8s ease-in-out;
+                        transform: translateY(50px);
+                        opacity: 0;
+                        &.active {
+                            transform: translateY(0px);
+                            opacity: 1;
+                        }
                         .contentBodyLogo {
                             background-color: #191a28;
                             width: 120px;
@@ -294,10 +286,26 @@
                     --maxWidth: 45%;
                     display: flex;
                     justify-content: space-between;
+                    .contentFooterYearsLeft {
+                        transform: translateX(-50px);
+                        &.active {
+                            transform: translateX(0px);
+                            opacity: 1;
+                        }
+                    }
+                    .contentFooterYearsRight {
+                        transform: translateX(50px);
+                        &.active {
+                            transform: translateX(0px);
+                            opacity: 1;
+                        }
+                    }
                     .contentFooterYearsLeft,
                     .contentFooterYearsRight {
                         flex: 0 0 var(--maxWidth);
                         max-width: var(--maxWidth);
+                        transition: 0.8s ease-in-out;
+                        opacity: 0;
                     }
                     .contentYear {
                         color: $color-white;
@@ -355,6 +363,18 @@
                     }
                 }
             }
+        }
+        .fadeInUp {
+            animation: fadeInUp 0.8s ease-in-out forwards;
+            opacity: 0;
+        }
+        .fadeInUpLeft {
+            animation: fadeInUpLeft 0.8s ease-in-out forwards;
+            opacity: 0;
+        }
+        .fadeInUpRight {
+            animation: fadeInUpRight 0.8s ease-in-out forwards;
+            opacity: 0;
         }
     }
 }
