@@ -9,10 +9,6 @@
     $pd-16: 16px;
     display: flex;
     transition: 0.8s all linear;
-    .fadeInUp {
-        animation: fadeInUp 0.8s ease-in-out forwards;
-        opacity: 0;
-    }
     .container {
         margin: auto;
         max-width: $layout-maxWidth;

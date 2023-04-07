@@ -3,7 +3,27 @@ import { Link } from 'react-router-dom'
 import clsx from 'clsx'
 import { GithubOutlined, LinkedinOutlined, InstagramOutlined } from '@ant-design/icons'
 import Button from '../../components/Button'
+import { motion } from 'framer-motion'
+import AnimatedPage from '../../components/Animated'
 import style from './Home.module.scss'
+
+const animationHeader = {
+    initial: { opacity: 0, y: -100 },
+    animated: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -100 },
+}
+
+const animationLeft = {
+    initial: { opacity: 0, x: 100 },
+    animated: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: -100 },
+}
+
+const animationRight = {
+    initial: { opacity: 0, x: -100 },
+    animated: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: 100 },
+}
 
 function Home() {
     const fadeInUp = clsx(style.fadeInUp)
@@ -42,7 +62,7 @@ function Home() {
 
         setTimeout(() => {
             typing()
-        }, 800)
+        }, 1000)
 
         return () => {
             clearTimeout(timer)
@@ -51,7 +71,14 @@ function Home() {
     }, [])
     return (
         <div className={style.home}>
-            <div className={style.container}>
+            <motion.div
+                variants={animationHeader}
+                initial="initial"
+                animate="animated"
+                exit="exit"
+                transition={{ duration: 0.6 }}
+                className={style.container}
+            >
                 <header className={style.header}>
                     <div className={style.left}>
                         <h3>Minh</h3>
@@ -61,10 +88,17 @@ function Home() {
                         <Button name="My projects" />
                     </Link>
                 </header>
-            </div>
+            </motion.div>
             <div className={style.content}>
                 <div className={style.containerContent}>
-                    <div className={style.contentLeft}>
+                    <motion.div
+                        variants={animationLeft}
+                        initial="initial"
+                        animate="animated"
+                        exit="exit"
+                        transition={{ duration: 0.6 }}
+                        className={style.contentLeft}
+                    >
                         <h1 className={fadeInUp}>LUONG MINH QUANG</h1>
                         <div className={clsx(fadeInUp, style.fadeInUp2, style.subTitle)}>
                             <h4>
@@ -94,12 +128,19 @@ function Home() {
                                 <GithubOutlined className={style.contentLeftIcon} />
                             </a>
                         </div>
-                    </div>
-                    <div className={style.contentRight}>
+                    </motion.div>
+                    <motion.div
+                        variants={animationRight}
+                        initial="initial"
+                        animate="animated"
+                        exit="exit"
+                        transition={{ duration: 0.6 }}
+                        className={style.contentRight}
+                    >
                         <div className={clsx(style.contentRightImg, fadeInDown)}>
                             <div className={style.contentImage}></div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </div>

@@ -8,11 +8,11 @@ body {
     background-image: url('./assets/site-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center 10%;
+    /* background-position: center 10%; */
     font-family: 'Roboto', sans-serif;
     min-height: 100vh;
     font-size: 62.5%;
-    overflow: auto;
+    overflow-y: scroll;
 }
 a {
     text-decoration: none;
