@@ -57,7 +57,7 @@
                             display: block;
                             padding: 20px 26px;
                             background-color: transparent;
-                            border: 1px solid #9e00b0;
+                            border: 1px solid $color-purple;
                             color: $color-white;
                             position: relative;
                             border-radius: var(--borderRadius);
@@ -131,7 +131,7 @@
                     .contentHeaderRightItem {
                         margin-bottom: 30px;
                         padding: 40px;
-                        border-radius: 20px;
+                        border-radius: $borderRadius;
                         position: relative;
                         background-color: #191a28;
                         &:before {

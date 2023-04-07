@@ -2,9 +2,9 @@
 button {
     @include fontOrbitron;
     @include colorGradientCustom(right);
-    padding: 12px 22px;
+    padding: 14px 22px;
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: $borderRadius;
     border: none;
     color: $color-white;
     font-size: 1.4em !important;

@@ -42,6 +42,17 @@
     }
 }
 
+@keyframes fadeInLeft {
+    from {
+        transform: translateX(140%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 @keyframes spinColor {
     from {
         --rotate: 0deg;

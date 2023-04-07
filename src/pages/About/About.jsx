@@ -11,11 +11,8 @@ function About() {
         const contentFooterYearsLeft = document.getElementsByClassName(style.contentFooterYearsLeft)
         const contentFooterYearsRight = document.getElementsByClassName(style.contentFooterYearsRight)
         const windowHeight = window.innerHeight
-        window.addEventListener('scroll', () => {
-            reveals(contentBodySkill, 120)
-            reveals(contentFooterYearsLeft, 0)
-            reveals(contentFooterYearsRight, 0)
-        })
+
+        window.addEventListener('scroll', handleShow)
 
         function reveals(reveals, elementVisible) {
             for (let i = 0; i < reveals.length; i++) {
@@ -27,6 +24,14 @@ function About() {
                 }
             }
         }
+
+        function handleShow() {
+            reveals(contentBodySkill, 120)
+            reveals(contentFooterYearsLeft, 0)
+            reveals(contentFooterYearsRight, 0)
+        }
+
+        return () => window.removeEventListener('scroll', handleShow)
     }, [])
     return (
         <div className={style.about}>

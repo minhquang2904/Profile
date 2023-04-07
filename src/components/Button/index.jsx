@@ -1,7 +1,11 @@
 import style from './Button.module.scss'
 
-function Button({ name, style }) {
-    return <button style={style}>{name}</button>
+function Button({ name, style, id, onClick }) {
+    return (
+        <button style={style} id={id} onClick={onClick}>
+            {name}
+        </button>
+    )
 }
 
 export default Button

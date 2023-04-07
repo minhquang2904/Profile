@@ -12,14 +12,16 @@ function Home() {
         let index = 0,
             isAdding = true,
             textTyping = document.querySelector('.typingText'),
-            text = ' Front-end developer'
+            text = ' Front-end developer',
+            timer,
+            timer2
 
-        function typing() {
-            setTimeout(() => {
+        let typing = () => {
+            timer = setTimeout(() => {
                 textTyping.innerText = text.slice(0, index)
                 if (isAdding) {
                     if (index > text.length) {
-                        setTimeout(() => {
+                        timer2 = setTimeout(() => {
                             typing()
                         }, 3000)
                         isAdding = false
@@ -37,9 +39,15 @@ function Home() {
                 }
             }, 100)
         }
+
         setTimeout(() => {
             typing()
         }, 800)
+
+        return () => {
+            clearTimeout(timer)
+            clearTimeout(timer2) // clearTimeout de tranh ro ri bo nho
+        }
     }, [])
     return (
         <div className={style.home}>
@@ -69,7 +77,7 @@ function Home() {
                         </p>
                         <div className={clsx(fadeInUp, style.fadeInUp4)}>
                             <Link to="/contact">
-                                <Button name="Contact me" style={{ padding: '12px 26px', marginRight: '16px' }} />
+                                <Button name="Contact me" style={{ marginRight: '16px' }} />
                             </Link>
                             <Link className={style.myInformation} to="/about">
                                 My information
