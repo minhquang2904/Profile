@@ -62,7 +62,7 @@ function Home() {
 
         setTimeout(() => {
             typing()
-        }, 1000)
+        }, 1600)
 
         return () => {
             clearTimeout(timer)
@@ -85,7 +85,7 @@ function Home() {
                         <h3>Quang</h3>
                     </div>
                     <Link to="/portfolio">
-                        <Button name="My projects" />
+                        <Button name="My portfolio" />
                     </Link>
                 </header>
             </motion.div>

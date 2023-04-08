@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { DownloadOutlined } from '@ant-design/icons'
 import { MdOutlineWorkOutline } from 'react-icons/md'
+import { motion } from 'framer-motion'
 import AnimatedPage from '../../components/Animated'
 import style from './About.module.scss'
 import clsx from 'clsx'
@@ -17,6 +18,11 @@ import {
     jquery,
     framerMotion,
 } from '../../index'
+
+const animatedLeftRight = {
+    initial: { opacity: 1, transform: 'scale(1)' },
+    exit: { opacity: 0, transform: 'scale(0.8)' },
+}
 
 function About() {
     useEffect(() => {
@@ -58,7 +64,13 @@ function About() {
                     </header>
                     <div className={style.content}>
                         <div className={style.contentHeader}>
-                            <div className={clsx(style.fadeInUpLeft, style.contentHeaderLeft)}>
+                            <motion.div
+                                variants={animatedLeftRight}
+                                initial="initial"
+                                exit="exit"
+                                transition={{ duration: 0.6 }}
+                                className={clsx(style.fadeInUpLeft, style.contentHeaderLeft)}
+                            >
                                 <h3 className={clsx(style.contentHeaderTitle)}>PERSONAL INFOS</h3>
                                 <div className={style.contentHeaderInformation}>
                                     <span>
@@ -95,8 +107,14 @@ function About() {
                                         <span className={style.contentHeaderButtonTitle}>download cv</span>
                                     </a>
                                 </div>
-                            </div>
-                            <div className={clsx(style.fadeInUpRight, style.contentHeaderRight)}>
+                            </motion.div>
+                            <motion.div
+                                variants={animatedLeftRight}
+                                initial="initial"
+                                exit="exit"
+                                transition={{ duration: 0.6 }}
+                                className={clsx(style.fadeInUpRight, style.contentHeaderRight)}
+                            >
                                 <div className={style.contentHeaderRightItem}>
                                     <span>0</span>
                                     <span>YEARS OF EXPERIENCE</span>
@@ -105,7 +123,7 @@ function About() {
                                     <span>1</span>
                                     <span>COMPLETED PROJECTS</span>
                                 </div>
-                            </div>
+                            </motion.div>
                         </div>
                         <div className={style.contentLine}>
                             <div></div>

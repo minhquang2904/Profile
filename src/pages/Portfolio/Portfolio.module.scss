@@ -1,0 +1,182 @@
+@import '../../variants.module.scss';
+@import '../../animation.module';
+@property --rotate {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: true;
+}
+.contact {
+    $pd-16: 16px;
+    display: flex;
+    transition: 0.8s all linear;
+    .container {
+        margin: auto;
+        max-width: $layout-maxWidth;
+        width: 100%;
+        padding: 0 $pd-16;
+        display: flex;
+        flex-direction: column;
+        .header {
+            @include customHeaderTitle;
+        }
+        .content {
+            &Header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: $color-white;
+                &Left {
+                    @include fontPoppins;
+                    font-size: 2.8em;
+                    text-transform: uppercase;
+                }
+                &Right {
+                    display: flex;
+                    align-items: center;
+                    user-select: none;
+                    span {
+                        margin: 0 20px;
+                        font-size: 1.8em;
+                    }
+                    &Icon {
+                        display: flex;
+                        padding: 10px;
+                        border-radius: 50%;
+                        transition: 0.4s ease;
+                        &:hover {
+                            background-color: rgba(66, 60, 66, 0.4);
+                            cursor: pointer;
+                        }
+                        .contentHeaderIcon {
+                            font-size: 1.8em;
+                        }
+                    }
+                }
+            }
+            .contentLine {
+                display: flex;
+                justify-content: center;
+                user-select: none;
+                div {
+                    width: 100%;
+                    height: 1px;
+                    background-color: rgba(97, 97, 97, 0.4);
+                    margin: 10px 0 30px 0;
+                    text-align: center;
+                    border-radius: 10px;
+                }
+            }
+            &Body {
+                display: flex;
+                &Left {
+                    flex: 0 0 70%;
+                    max-width: 70%;
+                    height: 100%;
+                    position: relative;
+                    &Image {
+                        width: 100%;
+                        img {
+                            max-width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                            border-radius: 20px;
+                        }
+                    }
+                    .listImages {
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        bottom: 20px;
+                        display: flex;
+                        gap: 0 15px;
+                        user-select: none;
+                        .listImage {
+                            transition: 0.2s linear;
+                            height: 15px;
+                            width: 15px;
+                            border-radius: 50%;
+                            border: 2px solid #808080;
+                            cursor: pointer;
+                            &:hover {
+                                background: #ccc;
+                            }
+                        }
+                    }
+                }
+                &Right {
+                    flex: 0 0 30%;
+                    max-width: 30%;
+                    margin-left: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    &Top {
+                        h3 {
+                            color: $color-white;
+                            font-size: 4em;
+                        }
+                        h5 {
+                            color: rgba(255, 255, 255, 0.7);
+                            font-size: 1.2em;
+                            margin: 12px 0;
+                            text-transform: uppercase;
+                        }
+                        p {
+                            color: $color-white;
+                            font-size: 1.6em;
+                        }
+
+                        &Skills {
+                            margin-top: 16px;
+                            user-select: none;
+                            .contentBodyRightTopSkill {
+                                margin-right: 4px;
+                                img {
+                                    width: 10%;
+                                }
+                            }
+                        }
+                    }
+                    &Down {
+                        display: flex;
+                        margin-bottom: 4px;
+                        &Btn {
+                            display: flex;
+                            align-items: center;
+                            color: $color-white;
+                            padding: 12px 18px;
+                            margin-right: 6px;
+                            border-radius: 30px;
+                            font-weight: 600;
+                            text-transform: uppercase;
+                            cursor: pointer;
+                            user-select: none;
+                            transition: 0.6s ease;
+                            &:hover {
+                                opacity: 0.7;
+                            }
+                            span {
+                                display: inline-block;
+                                margin-right: 8px;
+                                margin-top: 4px;
+                                font-size: 1.4em;
+                            }
+                            .contentIcon {
+                                font-size: 1.4em;
+                            }
+                        }
+                        .contentCode {
+                            background-color: $color-black;
+                            box-shadow: 0 5px 15px 1px rgba(204, 202, 202, 0.2);
+                        }
+                        .contentDemo {
+                            background-color: $color-white;
+                            color: $color-black;
+                            box-shadow: 0 5px 15px 10px rgba(14, 13, 13, 0.2);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

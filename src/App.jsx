@@ -4,7 +4,7 @@ import Navigation from './components/Navigation'
 import HomePage from './pages/Home/Home'
 import ContactPage from './pages/Contact/Contact'
 import AboutPage from './pages/About/About'
-import PortfolioPage from './pages/Portfolio'
+import PortfolioPage from './pages/Portfolio/Portfolio'
 import { AnimatePresence } from 'framer-motion'
 
 function App() {
