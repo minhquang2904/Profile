@@ -13,12 +13,12 @@ $layout-maxWidth: 1200px;
     font-family: 'Roboto', sans-serif !important;
 }
 
-@mixin fontAldrich {
-    font-family: 'Aldrich', sans-serif !important;
+@mixin fontOpenSans {
+    font-family: 'Open Sans', sans-serif !important;
 }
 
-@mixin fontOrbitron {
-    font-family: 'Orbitron', sans-serif !important;
+@mixin fontInter {
+    font-family: 'Inter', sans-serif !important;
 }
 
 @mixin fontPoppins {
@@ -45,6 +45,8 @@ $layout-maxWidth: 1200px;
             font-weight: 900;
             letter-spacing: 6px;
             text-transform: uppercase;
+            user-select: none;
+            @include fontOpenSans;
             &:last-child {
                 @include colorTextGradient;
             }

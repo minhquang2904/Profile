@@ -6,10 +6,10 @@
 }
 body {
     background-image: url('./assets/site-bg.jpg');
+    /* background: #191a28; */
     background-repeat: no-repeat;
     background-size: cover;
     /* background-position: center 10%; */
-    font-family: 'Roboto', sans-serif;
     min-height: 100vh;
     font-size: 62.5%;
     overflow-y: scroll;

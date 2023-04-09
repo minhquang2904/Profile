@@ -17,6 +17,12 @@ import wavo2 from './assets/wavo_image/wavo2.png'
 import wavo3 from './assets/wavo_image/wavo3.png'
 import wavo4 from './assets/wavo_image/wavo4.png'
 import wavo5 from './assets/wavo_image/wavo5.png'
+import profile1 from './assets/profile_image/profile1.png'
+import profile2 from './assets/profile_image/profile2.png'
+import profile3 from './assets/profile_image/profile3.png'
+import profile4 from './assets/profile_image/profile4.png'
+import travel1 from './assets/travel_image/travel1.png'
+import travel2 from './assets/travel_image/travel2.png'
 
 export {
     framerMotion,
@@ -38,4 +44,10 @@ export {
     wavo4,
     wavo5,
     vite,
+    profile1,
+    profile2,
+    profile3,
+    profile4,
+    travel1,
+    travel2,
 }

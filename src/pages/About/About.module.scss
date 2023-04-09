@@ -25,6 +25,7 @@
                     @include customFlex50;
                     padding-right: $pd-16;
                     .contentHeaderTitle {
+                        @include fontOpenSans;
                         font-size: 2.8em;
                         margin-bottom: 24px;
                         color: $color-white;
@@ -33,6 +34,7 @@
                         display: flex;
                         flex-direction: column;
                         span {
+                            @include fontInter;
                             font-size: 1.6em;
                             margin-bottom: 20px;
                             font-weight: 500;
@@ -134,6 +136,7 @@
                         border-radius: $borderRadius;
                         position: relative;
                         background-color: #191a28;
+                        @include fontRoboto;
                         &:before {
                             --borderItem: 4px;
                             content: '';
@@ -209,6 +212,7 @@
                     color: $color-white;
                     text-transform: uppercase;
                     margin: 0 0 40px 0;
+                    @include fontOpenSans;
                 }
                 .contentBodySkills {
                     display: flex;
@@ -270,17 +274,20 @@
                             text-transform: uppercase;
                             color: $color-white;
                             font-weight: 400;
+                            @include fontInter;
                         }
                     }
                 }
             }
             .contentFooter {
+                margin-bottom: 100px;
                 h1 {
                     text-align: center;
                     font-size: 2.8em;
                     color: $color-white;
                     text-transform: uppercase;
                     margin: 0 0 40px 0;
+                    @include fontOpenSans;
                 }
                 .contentFooterYears {
                     --maxWidth: 45%;
@@ -338,7 +345,6 @@
                             }
                         }
                         .contentYearTitle {
-                            @include fontPoppins;
                             span {
                                 background-color: rgba(25, 26, 40, 0.5);
                                 padding: 8px 10px;
@@ -349,15 +355,18 @@
                                 font-size: 1.2em;
                                 font-weight: 600;
                                 color: #d3d1d1;
+                                @include fontPoppins;
                             }
                             h2 {
                                 margin-bottom: 10px;
                                 font-size: 1.8em;
+                                @include fontOpenSans;
                             }
                             p {
                                 font-size: 1.4em;
                                 text-align: justify;
-                                line-height: 1.4em;
+                                line-height: 1.6em;
+                                @include fontInter;
                             }
                         }
                     }

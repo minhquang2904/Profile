@@ -35,6 +35,7 @@
                         margin-right: 16px;
                     }
                     &Title {
+                        @include fontInter;
                         h3 {
                             color: #cbcbcb;
                             font-size: 1.6em;
@@ -80,6 +81,7 @@
                     }
                     textarea,
                     input {
+                        @include fontInter;
                         padding: 20px 30px;
                         width: 100%;
                         outline: none;
@@ -117,6 +119,7 @@
         top: 80px;
         right: 10px;
         .message {
+            @include fontInter;
             margin-bottom: 8px;
             background-color: #dff0d8;
             color: #3c763d;
