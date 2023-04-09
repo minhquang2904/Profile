@@ -4,7 +4,7 @@ import { BsGithub } from 'react-icons/bs'
 import { ImEarth } from 'react-icons/im'
 import style from './Portfolio.module.scss'
 import clsx from 'clsx'
-import data from './data.json'
+import data from './data'
 
 function Portfolio() {
     const [project, setProject] = useState(0)
@@ -90,7 +90,7 @@ function Portfolio() {
                                     {data[project].skills.map((skill, index) => {
                                         return (
                                             <span key={index} className={style.contentBodyRightTopSkill}>
-                                                <img src={`/src/assets/${skill}`} alt="IMAGE" />
+                                                <img src={skill} alt="IMAGE" />
                                             </span>
                                         )
                                     })}
