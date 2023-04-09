@@ -42,7 +42,7 @@ const data = [
     },
     {
         image: [profile1, profile2, profile3, profile4],
-        name: 'Minh Quang Dev',
+        name: 'MQuang Dev',
         subname: 'MY PORTFOLIO WEBSITE',
         description:
             'Trang cá nhân của bản thân, thông tin liên hệ và các dự án đã làm. Website được xây dựng chủ yếu dựa trên React và Framer Motion.',
