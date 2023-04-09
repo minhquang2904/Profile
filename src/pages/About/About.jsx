@@ -133,7 +133,7 @@ function About() {
                             <div className={style.contentBodySkills}>
                                 <div className={style.contentBodySkill}>
                                     <div className={style.contentBodyLogo}>
-                                        <img src={htmlLogo} alt="IMAGE" style={{ width: '70%', height: '70%' }} />
+                                        <img src={htmlLogo} alt="IMAGE" style={{ width: '65%', height: '65%' }} />
                                     </div>
                                     <h3>HTML5</h3>
                                 </div>
@@ -169,7 +169,7 @@ function About() {
                                 </div>
                                 <div className={style.contentBodySkill}>
                                     <div className={style.contentBodyLogo}>
-                                        <img src={bootstrap} alt="IMAGE" style={{ width: '70%', height: '70%' }} />
+                                        <img src={bootstrap} alt="IMAGE" style={{ width: '65%', height: '65%' }} />
                                     </div>
                                     <h3>bootstrap</h3>
                                 </div>

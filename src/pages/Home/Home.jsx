@@ -4,7 +4,6 @@ import clsx from 'clsx'
 import { GithubOutlined, LinkedinOutlined, InstagramOutlined } from '@ant-design/icons'
 import Button from '../../components/Button'
 import { motion } from 'framer-motion'
-import AnimatedPage from '../../components/Animated'
 import style from './Home.module.scss'
 
 const animationHeader = {
