@@ -1,0 +1,212 @@
+@import '../../variants.module.scss';
+@import '../../animation.module';
+@property --rotate {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: true;
+}
+.home {
+    $pd-16: 16px;
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+    .container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        max-width: $layout-maxWidth;
+        width: 100%;
+        padding: 0 $pd-16;
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            user-select: none;
+            .left {
+                font-size: 2em;
+                text-transform: uppercase;
+                color: $color-white;
+                h3 {
+                    @include fontOpenSans;
+                }
+                h3:first-child {
+                    font-weight: 900;
+                    @include colorTextGradient;
+                }
+            }
+            .right {
+                @include colorGradientCustom(right);
+                @include fontInter;
+                padding: 12px 16px;
+                border-radius: 50px;
+                color: $color-white;
+                font-size: 1.6em;
+                cursor: pointer;
+                user-select: none;
+                font-weight: 500;
+                &:hover {
+                    @include colorGradientCustom(left);
+                }
+            }
+        }
+    }
+    .content {
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        max-width: $layout-maxWidth;
+        width: 100%;
+        padding: 0 $pd-16;
+        .containerContent {
+            display: flex;
+            margin: auto;
+            max-width: $layout-maxWidth;
+            width: 100%;
+            justify-content: space-between;
+            .contentLeft {
+                @include customFlex50;
+                padding-right: $pd-16;
+                color: $color-white;
+                .fadeInUp {
+                    animation: fadeInUp 0.8s 0.6s ease-in-out forwards;
+                    opacity: 0;
+                }
+                .fadeInUp2 {
+                    animation-delay: 0.7s;
+                }
+                .fadeInUp3 {
+                    animation-delay: 0.8s;
+                }
+                .fadeInUp4 {
+                    animation-delay: 0.9s;
+                }
+                .fadeInUp5 {
+                    animation-delay: 1s;
+                }
+                h1 {
+                    font-size: 4.2em;
+                    margin: 0;
+                    font-weight: 900;
+                    @include fontOpenSans;
+                }
+                .subTitle {
+                    @include fontOpenSans;
+                    font-weight: 700;
+                    margin: 4px 0 0 0;
+                    display: flex;
+                    text-transform: uppercase;
+                    font-size: 2.6em;
+                    h4 {
+                        span {
+                            color: #9e00b0;
+                        }
+                    }
+                    .delay {
+                        animation-delay: 0.8s;
+                    }
+                }
+                p {
+                    @include fontInter;
+                    font-size: 1.6em;
+                    line-height: 1.6em;
+                    color: #f0ebf5;
+                    margin: 28px 0;
+                }
+                .myInformation {
+                    @include fontOpenSans;
+                    @include colorTextGradient;
+                    text-transform: capitalize;
+                    font-weight: 900;
+                    transition: 0.6s linear;
+                    font-size: 1.6em;
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
+                .contentLeftFooter {
+                    display: flex;
+                    margin-top: 40px;
+                    gap: 0 20px;
+                    a {
+                        text-decoration: none;
+                        .contentLeftIcon {
+                            transition: 0.4s ease;
+                            font-size: 1.6em;
+                            color: $color-white;
+                        }
+                        &:hover {
+                            .contentLeftIcon {
+                                color: rgb(216, 152, 223);
+                                transform: translateY(-3px);
+                            }
+                        }
+                    }
+                }
+            }
+            .contentRight {
+                @include customFlex50;
+                padding-left: $pd-16;
+                display: flex;
+                justify-content: flex-end;
+                user-select: none;
+                .fadeInDown {
+                    animation: fadeInDown 0.8s 0.6s ease-in-out forwards;
+                    opacity: 0;
+                }
+                .contentRightImg {
+                    position: relative;
+                    width: 300px;
+                    height: 300px;
+                    .contentImage {
+                        background-image: url('../../assets/avatar.jpg');
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                        z-index: 1;
+                        transition: 0.6s ease;
+                        &:hover {
+                            background-position: center 10%;
+                        }
+                    }
+                    &:after {
+                        @include colorGradientCustom(right);
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 102%;
+                        height: 102%;
+                        border-radius: 50%;
+                        z-index: 0;
+                        filter: blur(100px);
+                    }
+                    &:before {
+                        background: linear-gradient(
+                            var(--rotate),
+                            #ff56f6 27.04%,
+                            #406aff 101.43%,
+                            #3bace2 100.63%,
+                            #b936ee 100%
+                        );
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 104%;
+                        height: 104%;
+                        border-radius: 50%;
+                        z-index: 0;
+                        animation: spinColor 1s linear infinite;
+                    }
+                }
+            }
+        }
+    }
+}

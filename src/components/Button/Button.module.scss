@@ -1,0 +1,15 @@
+@import '../../variants.module';
+button {
+    @include fontOpenSans;
+    @include colorGradientCustom(right);
+    padding: 14px 22px;
+    cursor: pointer;
+    border-radius: $borderRadius;
+    border: none;
+    color: $color-white;
+    font-size: 1.6em !important;
+    letter-spacing: 1.9px;
+    &:hover {
+        @include colorGradientCustom(left);
+    }
+}
