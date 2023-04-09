@@ -8,6 +8,7 @@ import bootstrap from './assets/bootstrap.svg'
 import jquery from './assets/jquery.svg'
 import reactRouter from './assets/reactRouter.svg'
 import framerMotion from './assets/framerMotion.svg'
+import vite from './assets/vitejs.svg'
 import cv from './assets/CV_LuongMinhQuang.pdf'
 import avatar from './assets/avatar.jpg'
 import bg from './assets/site-bg.jpg'
@@ -36,4 +37,5 @@ export {
     wavo3,
     wavo4,
     wavo5,
+    vite,
 }

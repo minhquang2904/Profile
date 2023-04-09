@@ -104,6 +104,7 @@ function Portfolio() {
                                                 animate={{ opacity: 1 }}
                                                 exit={{ opacity: 0 }}
                                                 transition={{ duration: 0.6 }}
+                                                className={style.contentBodyImageBlock}
                                             >
                                                 <img id="image" src={data[project].image[image]} alt="IMAGE" />
                                             </motion.div>
@@ -134,9 +135,6 @@ function Portfolio() {
                                     className={style.contentBodyRight}
                                 >
                                     <div className={style.contentBodyRightTop}>
-                                        <h3>{data[project].name}</h3>
-                                        <h5>{data[project].subname}</h5>
-                                        <p>{data[project].description}</p>
                                         <div className={style.contentBodyRightTopSkills}>
                                             {data[project].skills.map((skill, index) => {
                                                 return (
@@ -146,6 +144,9 @@ function Portfolio() {
                                                 )
                                             })}
                                         </div>
+                                        <h3>{data[project].name}</h3>
+                                        <h5>{data[project].subname}</h5>
+                                        <p>{data[project].description}</p>
                                     </div>
                                     <div className={style.contentBodyRightDown}>
                                         {data[project].github && (

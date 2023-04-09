@@ -105,8 +105,9 @@ function Home() {
                             </h4>
                         </div>
                         <p className={clsx(fadeInUp, style.fadeInUp3)}>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae nihil et aperiam expedita
-                            exercitationem aliquam dolore quos quae maxime repellendus, animi minus architecto eligendi
+                            Tôi là sinh viên năm 4 chưa có kinh nghiệm về frontend nhưng tôi vẫn luôn học tập và rèn
+                            luyện để cải thiện bản thân mỗi ngày. Với sự vui vẻ, hòa đồng và kiên trì tôi tin rằng mình
+                            sẽ hoàn thành tốt công việc.Tôi mong muốn sẽ trở thành Frontend Software Engineer.
                         </p>
                         <div className={clsx(fadeInUp, style.fadeInUp4)}>
                             <Link to="/contact">
