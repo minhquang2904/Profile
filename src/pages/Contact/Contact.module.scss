@@ -10,12 +10,9 @@
     display: flex;
     transition: 0.8s all linear;
     .container {
-        margin: auto;
-        max-width: $layout-maxWidth;
-        width: 100%;
-        padding: 0 $pd-16;
         display: flex;
         flex-direction: column;
+        @include maxWidthLayoutExtraLarge;
         .header {
             @include customHeaderTitle;
         }

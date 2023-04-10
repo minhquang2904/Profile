@@ -1,5 +1,4 @@
-@import '../../variants.module.scss';
-@import '../../animation.module';
+@import '../../style.module.scss';
 @property --rotate {
     syntax: '<angle>';
     initial-value: 0deg;
@@ -8,23 +7,28 @@
 .home {
     $pd-16: 16px;
     display: flex;
-    min-height: 100vh;
-    position: relative;
+    flex-direction: column;
     .container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-        max-width: $layout-maxWidth;
-        width: 100%;
-        padding: 0 $pd-16;
+        @include maxWidthLayoutExtraLarge;
+        @include extraExtraLarge {
+            max-width: $layout-maxWidthLarge;
+        }
+        @include extraLarge {
+            max-width: $layout-maxWidthMedium;
+        }
+        @include tabletAndMobile {
+            padding: 0 28px;
+        }
+        @include large {
+            max-width: $layout-maxWidthSmall;
+        }
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 16px 0;
             user-select: none;
+            margin-top: 20px;
             .left {
                 font-size: 2em;
                 text-transform: uppercase;
@@ -54,21 +58,43 @@
         }
     }
     .content {
-        top: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-        max-width: $layout-maxWidth;
-        width: 100%;
-        padding: 0 $pd-16;
+        @include maxWidthLayoutExtraLarge;
+        @include extraExtraLarge {
+            max-width: $layout-maxWidthLarge;
+        }
+        @include extraLarge {
+            max-width: $layout-maxWidthMedium;
+        }
+        @include tabletAndMobile {
+            padding: 0 28px;
+        }
+        @include large {
+            max-width: $layout-maxWidthSmall;
+        }
+        margin-top: 160px;
         .containerContent {
             display: flex;
-            margin: auto;
-            max-width: $layout-maxWidth;
-            width: 100%;
             justify-content: space-between;
+            @include tabletAndMobile {
+                flex-direction: column-reverse;
+                align-items: center;
+                justify-content: unset;
+            }
             .contentLeft {
                 @include customFlex50;
+                @include extraLarge {
+                    flex: 0 0 70%;
+                    max-width: 70%;
+                }
+                @include tabletAndMobile {
+                    margin-top: 40px;
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding-bottom: 100px;
+                }
                 padding-right: $pd-16;
                 color: $color-white;
                 .fadeInUp {
@@ -87,11 +113,23 @@
                 .fadeInUp5 {
                     animation-delay: 1s;
                 }
+                @include tabletAndMobile {
+                    text-align: center;
+                }
                 h1 {
                     font-size: 4.2em;
                     margin: 0;
                     font-weight: 900;
                     @include fontOpenSans;
+                    @include large {
+                        font-size: 3.4em;
+                    }
+                    @include medium {
+                        font-size: 3em;
+                    }
+                    @include small {
+                        font-size: 2.4em;
+                    }
                 }
                 .subTitle {
                     @include fontOpenSans;
@@ -100,6 +138,15 @@
                     display: flex;
                     text-transform: uppercase;
                     font-size: 2.6em;
+                    @include large {
+                        font-size: 2em;
+                    }
+                    @include medium {
+                        font-size: 1.8em;
+                    }
+                    @include small {
+                        font-size: 1.6em;
+                    }
                     h4 {
                         span {
                             color: #9e00b0;
@@ -115,6 +162,20 @@
                     line-height: 1.6em;
                     color: #f0ebf5;
                     margin: 28px 0;
+                    @include large {
+                        font-size: 1.4em;
+                    }
+                }
+                .btnContent {
+                    display: flex;
+                    align-items: center;
+                    gap: 0 16px;
+                    @include small {
+                        display: flex;
+                        flex-direction: column;
+                        text-align: center;
+                        gap: 16px 0;
+                    }
                 }
                 .myInformation {
                     @include fontOpenSans;
@@ -149,10 +210,19 @@
             }
             .contentRight {
                 @include customFlex50;
+                @include extraLarge {
+                    flex: 0 0 30%;
+                    max-width: 30%;
+                }
+                @include tabletAndMobile {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                }
                 padding-left: $pd-16;
                 display: flex;
                 justify-content: flex-end;
                 user-select: none;
+                align-items: center;
                 .fadeInDown {
                     animation: fadeInDown 0.8s 0.6s ease-in-out forwards;
                     opacity: 0;
@@ -161,17 +231,36 @@
                     position: relative;
                     width: 300px;
                     height: 300px;
+                    @include extraLarge {
+                        width: 250px;
+                        height: 350px;
+                    }
+                    @include large {
+                        width: 240px;
+                        height: 240px;
+                    }
+                    @include medium {
+                        width: 200px;
+                        height: 200px;
+                    }
+                    @include small {
+                        width: 180px;
+                        height: 180px;
+                    }
                     .contentImage {
                         background-image: url('../../assets/avatar.jpg');
                         position: absolute;
                         width: 100%;
                         height: 100%;
                         border-radius: 50%;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: cover;
+                        @include extraLarge {
+                            border-radius: 10px;
+                        }
                         z-index: 1;
                         transition: 0.6s ease;
-                        &:hover {
-                            background-position: center 10%;
-                        }
                     }
                     &:after {
                         @include colorGradientCustom(right);
@@ -202,6 +291,11 @@
                         width: 104%;
                         height: 104%;
                         border-radius: 50%;
+                        @include extraLarge {
+                            border-radius: 10px;
+                            width: 101%;
+                            height: 101%;
+                        }
                         z-index: 0;
                         animation: spinColor 1s linear infinite;
                     }

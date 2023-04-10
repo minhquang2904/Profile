@@ -3,7 +3,10 @@ $color-black: #000000;
 $color-purple: #9e00b0;
 $borderRadius: 6px;
 $color-gradient: linear-gradient(92.23deg, #406aff 21.43%, #3bace2 50.63%, #b936ee 100%, #ff56f6 117.04%);
-$layout-maxWidth: 1200px;
+$layout-maxWidthExtraLarge: 1140px;
+$layout-maxWidthLarge: 1000px;
+$layout-maxWidthMedium: 860px;
+$layout-maxWidthSmall: 800px;
 
 @mixin colorGradientCustom($pos) {
     background: linear-gradient(to $pos, #ff56f6 27.04%, #406aff 101.43%, #3bace2 100.63%, #b936ee 100%);
@@ -57,4 +60,12 @@ $layout-maxWidth: 1200px;
 @mixin customFlex50 {
     flex: 0 0 50%;
     max-width: 50%;
+}
+
+@mixin maxWidthLayoutExtraLarge {
+    margin: auto;
+    max-width: $layout-maxWidthExtraLarge;
+    width: 100%;
+    padding: 0 16px;
+    transition: 0.6s;
 }

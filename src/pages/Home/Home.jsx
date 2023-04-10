@@ -109,9 +109,9 @@ function Home() {
                             luyện để cải thiện bản thân mỗi ngày. Với sự vui vẻ, hòa đồng và kiên trì tôi tin rằng mình
                             sẽ hoàn thành tốt công việc.Tôi mong muốn sẽ trở thành Frontend Software Engineer.
                         </p>
-                        <div className={clsx(fadeInUp, style.fadeInUp4)}>
+                        <div className={clsx(fadeInUp, style.fadeInUp4, style.btnContent)}>
                             <Link to="/contact">
-                                <Button name="Contact me" style={{ marginRight: '16px' }} />
+                                <Button name="Contact me" />
                             </Link>
                             <Link className={style.myInformation} to="/about">
                                 My information
