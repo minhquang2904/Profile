@@ -12,15 +12,22 @@
     .container {
         display: flex;
         flex-direction: column;
-        @include maxWidthLayoutExtraLarge;
+        @include customLayout;
         .header {
             @include customHeaderTitle;
         }
         .content {
             display: flex;
+            @include tabletAndMobile {
+                flex-direction: column;
+            }
             &HeaderLeft {
                 flex: 0 0 40%;
                 max-width: 40%;
+                @include tabletAndMobile {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                }
                 padding-right: $pd-16;
                 .contentItem {
                     display: flex;
@@ -42,9 +49,11 @@
                         }
                         a,
                         p {
+                            word-break: break-all;
                             color: $color-white;
                             font-size: 1.4em;
                             font-weight: 700;
+                            line-height: 1.6em;
                         }
                         a {
                             text-decoration: none;
@@ -55,6 +64,12 @@
             &HeaderRight {
                 flex: 0 0 60%;
                 max-width: 60%;
+                @include tabletAndMobile {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    margin-top: 16px;
+                    padding-bottom: 120px;
+                }
                 padding-left: $pd-16;
                 .textarea {
                     height: 120px;

@@ -13,6 +13,18 @@ const animationImage = {
     animated: { opacity: 1, x: 0 },
 }
 
+const animationContentProjectsLarge = {
+    initial: { x: 50, opacity: 0 },
+    animate: { x: 0, opacity: 1 },
+    exit: { x: 50, opacity: 0 },
+}
+
+const animationContentProjectsSmall = {
+    initial: { y: -20, opacity: 0 },
+    animate: { y: 0, opacity: 1 },
+    exit: { y: -20, opacity: 0 },
+}
+
 function Portfolio() {
     const [project, setProject] = useState(0)
     const [image, setImage] = useState(0)
@@ -127,10 +139,15 @@ function Portfolio() {
                             <AnimatePresence mode="wait" initial={false}>
                                 <motion.div
                                     key={project}
-                                    initial={{ x: 100, opacity: 0 }}
-                                    animate={{ x: 0, opacity: 1 }}
+                                    variants={
+                                        window.innerWidth > 1200
+                                            ? animationContentProjectsLarge
+                                            : animationContentProjectsSmall
+                                    }
+                                    initial="initial"
+                                    animate="animate"
+                                    exit="exit"
                                     transition={{ duration: 0.8 }}
-                                    exit={{ x: 100, opacity: 0 }}
                                     id="contentRight"
                                     className={style.contentBodyRight}
                                 >
