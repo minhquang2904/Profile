@@ -69,7 +69,7 @@ function About() {
                                 initial="initial"
                                 exit="exit"
                                 transition={{ duration: 0.6 }}
-                                className={clsx(style.fadeInUpLeft, style.contentHeaderLeft)}
+                                className={clsx(style.fadeInUp, style.contentHeaderLeft)}
                             >
                                 <h3 className={clsx(style.contentHeaderTitle)}>PERSONAL INFOS</h3>
                                 <div className={style.contentHeaderInformation}>
@@ -113,7 +113,7 @@ function About() {
                                 initial="initial"
                                 exit="exit"
                                 transition={{ duration: 0.6 }}
-                                className={clsx(style.fadeInUpRight, style.contentHeaderRight)}
+                                className={clsx(style.fadeInUp, style.contentHeaderRight)}
                             >
                                 <div className={style.contentHeaderRightItem}>
                                     <span>0</span>

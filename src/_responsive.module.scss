@@ -33,3 +33,15 @@
         @content;
     }
 }
+
+@mixin contentSkillSmall {
+    @media (max-width: 446px) {
+        @content;
+    }
+}
+
+@mixin contentSkillExtraSmall {
+    @media (max-width: 360px) {
+        @content;
+    }
+}

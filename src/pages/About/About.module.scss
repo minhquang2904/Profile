@@ -1,5 +1,4 @@
-@import '../../variants.module.scss';
-@import '../../animation.module';
+@import '../../style.module.scss';
 @property --rotate {
     syntax: '<angle>';
     initial-value: 0deg;
@@ -9,23 +8,28 @@
     $pd-16: 16px;
     display: flex;
     .container {
-        display: flex;
-        flex-direction: column;
-        @include maxWidthLayoutExtraLarge;
+        @include customLayout;
         .header {
             @include customHeaderTitle;
         }
         .content {
             &Header {
                 display: flex;
+                @include tabletAndMobile {
+                    flex-direction: column;
+                }
                 &Left {
                     @include customFlex50;
+                    @include tabletAndMobile {
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                        margin-bottom: 40px;
+                        padding-right: 0;
+                    }
                     padding-right: $pd-16;
                     .contentHeaderTitle {
-                        @include fontOpenSans;
-                        font-size: 2.8em;
+                        @include customTextInformation;
                         margin-bottom: 24px;
-                        color: $color-white;
                     }
                     .contentHeaderInformation {
                         display: flex;
@@ -36,10 +40,15 @@
                             margin-bottom: 20px;
                             font-weight: 500;
                             color: $color-white;
+                            @include small {
+                                line-height: 1.8em;
+                                margin-bottom: 6px;
+                            }
                             label {
                                 color: #cbcbcb;
                             }
                             strong {
+                                word-break: break-all;
                                 a {
                                     color: $color-white;
                                 }
@@ -47,6 +56,9 @@
                         }
                     }
                     .contentHeaderButton {
+                        @include small {
+                            margin-top: 12px;
+                        }
                         .contentHeaderMyCv {
                             --borderRadius: 50px;
                             --widthBorder: 58px;
@@ -124,6 +136,11 @@
                 }
                 &Right {
                     @include customFlex50;
+                    @include tabletAndMobile {
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                        padding-left: 0;
+                    }
                     padding-left: $pd-16;
                     display: flex;
                     flex-direction: column;
@@ -153,6 +170,10 @@
                             );
                             border-radius: inherit;
                             animation: spinColor 5s linear infinite;
+                        }
+                        span {
+                            line-height: 1.4em;
+                            word-break: break-all;
                         }
                         span:first-child {
                             @include fontPoppins;
@@ -204,12 +225,10 @@
             }
             .contentBody {
                 h1 {
+                    @include customTextInformation;
                     text-align: center;
-                    font-size: 2.8em;
-                    color: $color-white;
                     text-transform: uppercase;
                     margin: 0 0 40px 0;
-                    @include fontOpenSans;
                 }
                 .contentBodySkills {
                     display: flex;
@@ -218,6 +237,18 @@
                     .contentBodySkill {
                         flex: 0 0 25%;
                         max-width: 25%;
+                        @include small {
+                            flex: 0 0 33.33333333%;
+                            max-width: 33.33333333%;
+                        }
+                        @include contentSkillSmall {
+                            flex: 0 0 50%;
+                            max-width: 50%;
+                        }
+                        @include contentSkillExtraSmall {
+                            flex: 0 0 100%;
+                            max-width: 100%;
+                        }
                         font-size: 2em;
                         display: flex;
                         justify-content: center;
@@ -240,6 +271,18 @@
                             margin-bottom: 14px;
                             z-index: 1;
                             transition: 0.3s ease;
+                            @include extraLarge {
+                                width: 110px;
+                                height: 110px;
+                            }
+                            @include medium {
+                                width: 100px;
+                                height: 100px;
+                            }
+                            @include small {
+                                width: 100px;
+                                height: 100px;
+                            }
                             &:hover {
                                 transform: scale(1.08);
                                 &::before {
@@ -277,28 +320,36 @@
                 }
             }
             .contentFooter {
-                margin-bottom: 100px;
+                @include tabletAndMobile {
+                    padding-bottom: 120px;
+                }
                 h1 {
+                    @include customTextInformation;
                     text-align: center;
-                    font-size: 2.8em;
-                    color: $color-white;
                     text-transform: uppercase;
                     margin: 0 0 40px 0;
-                    @include fontOpenSans;
                 }
                 .contentFooterYears {
                     --maxWidth: 45%;
                     display: flex;
                     justify-content: space-between;
+                    @include medium {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    @include small {
+                        flex-direction: column;
+                        align-items: center;
+                    }
                     .contentFooterYearsLeft {
-                        transform: translateX(-50px);
+                        transform: translateX(-20px);
                         &.active {
                             transform: translateX(0px);
                             opacity: 1;
                         }
                     }
                     .contentFooterYearsRight {
-                        transform: translateX(50px);
+                        transform: translateX(20px);
                         &.active {
                             transform: translateX(0px);
                             opacity: 1;
@@ -308,6 +359,14 @@
                     .contentFooterYearsRight {
                         flex: 0 0 var(--maxWidth);
                         max-width: var(--maxWidth);
+                        @include medium {
+                            flex: 0 0 100%;
+                            max-width: 100%;
+                        }
+                        @include small {
+                            flex: 0 0 100%;
+                            max-width: 100%;
+                        }
                         transition: 0.8s ease-in-out;
                         opacity: 0;
                     }
@@ -358,10 +417,10 @@
                                 margin-bottom: 10px;
                                 font-size: 1.8em;
                                 @include fontOpenSans;
+                                line-height: 1.4em;
                             }
                             p {
                                 font-size: 1.4em;
-                                text-align: justify;
                                 line-height: 1.6em;
                                 @include fontInter;
                             }
@@ -372,14 +431,6 @@
         }
         .fadeInUp {
             animation: fadeInUp 0.8s ease-in-out forwards;
-            opacity: 0;
-        }
-        .fadeInUpLeft {
-            animation: fadeInUpLeft 0.8s ease-in-out forwards;
-            opacity: 0;
-        }
-        .fadeInUpRight {
-            animation: fadeInUpRight 0.8s ease-in-out forwards;
             opacity: 0;
         }
     }

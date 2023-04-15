@@ -9,19 +9,7 @@
     display: flex;
     flex-direction: column;
     .container {
-        @include maxWidthLayoutExtraLarge;
-        @include extraExtraLarge {
-            max-width: $layout-maxWidthLarge;
-        }
-        @include extraLarge {
-            max-width: $layout-maxWidthMedium;
-        }
-        @include tabletAndMobile {
-            padding: 0 28px;
-        }
-        @include large {
-            max-width: $layout-maxWidthSmall;
-        }
+        @include customLayout;
         .header {
             display: flex;
             justify-content: space-between;
@@ -58,19 +46,7 @@
         }
     }
     .content {
-        @include maxWidthLayoutExtraLarge;
-        @include extraExtraLarge {
-            max-width: $layout-maxWidthLarge;
-        }
-        @include extraLarge {
-            max-width: $layout-maxWidthMedium;
-        }
-        @include tabletAndMobile {
-            padding: 0 28px;
-        }
-        @include large {
-            max-width: $layout-maxWidthSmall;
-        }
+        @include customLayout;
         margin-top: 160px;
         .containerContent {
             display: flex;
@@ -93,7 +69,8 @@
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    padding-bottom: 100px;
+                    padding-bottom: 120px;
+                    padding-right: 0;
                 }
                 padding-right: $pd-16;
                 color: $color-white;
@@ -218,7 +195,9 @@
                     flex: 0 0 100%;
                     max-width: 100%;
                 }
-                padding-left: $pd-16;
+                @include tabletAndMobile {
+                    padding-left: 0;
+                }
                 display: flex;
                 justify-content: flex-end;
                 user-select: none;
