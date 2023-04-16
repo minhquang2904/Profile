@@ -27,6 +27,7 @@
                 @include tabletAndMobile {
                     flex: 0 0 100%;
                     max-width: 100%;
+                    padding-right: 0;
                 }
                 padding-right: $pd-16;
                 .contentItem {
@@ -69,6 +70,7 @@
                     max-width: 100%;
                     margin-top: 16px;
                     padding-bottom: 120px;
+                    padding-left: 0;
                 }
                 padding-left: $pd-16;
                 .textarea {
