@@ -98,7 +98,7 @@ function Home() {
                         transition={{ duration: 0.6 }}
                         className={style.contentLeft}
                     >
-                        <h1 className={fadeInUp}>LUONG MINH QUANG 111</h1>
+                        <h1 className={fadeInUp}>LUONG MINH QUANG</h1>
                         <div className={clsx(fadeInUp, style.fadeInUp2, style.subTitle)}>
                             <h4>
                                 I AM A <span className={clsx('typingText')}></span>
