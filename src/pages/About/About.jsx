@@ -75,7 +75,7 @@ function About() {
                                 <div className={style.contentHeaderInformation}>
                                     <span>
                                         <label>Name: </label>
-                                        <strong>Luong Minh Quang</strong>
+                                        <strong>Lương Minh Quang</strong>
                                     </span>
                                     <span>
                                         <label>Birthday: </label>
@@ -83,7 +83,7 @@ function About() {
                                     </span>
                                     <span>
                                         <label>National: </label>
-                                        <strong>Viet Nam</strong>
+                                        <strong>Việt Nam</strong>
                                     </span>
                                     <span>
                                         <label>Phone: </label>
