@@ -1,0 +1,53 @@
+@mixin small {
+    @media (max-width: calc(576px - 1px)) {
+        @content;
+    }
+}
+@mixin medium {
+    @media (min-width: 576px) and (max-width: calc(768px - 1px)) {
+        @content;
+    }
+}
+@mixin large {
+    @media (min-width: 768px) and (max-width: calc(992px - 1px)) {
+        @content;
+    }
+}
+@mixin extraLarge {
+    @media (min-width: 992px) and (max-width: calc(1200px - 1px)) {
+        @content;
+    }
+}
+@mixin extraExtraLarge {
+    @media (min-width: 1200px) and (max-width: 1300px) {
+        @content;
+    }
+}
+@mixin navResponsive {
+    @media (max-width: calc(992px - 1px)) {
+        @content;
+    }
+}
+@mixin tabletAndMobile {
+    @media (max-width: calc(992px - 1px)) {
+        @content;
+    }
+}
+
+@mixin contentSkillSmall {
+    @media (max-width: 446px) {
+        @content;
+    }
+}
+
+@mixin contentSkillExtraSmall {
+    @media (max-width: 360px) {
+        @content;
+    }
+}
+
+@mixin customLayoutPorfolio {
+    @media (max-width: 1200px) {
+        @content;
+    }
+}

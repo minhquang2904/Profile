@@ -1,0 +1,437 @@
+@import '../../style.module.scss';
+@property --rotate {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: true;
+}
+.about {
+    $pd-16: 16px;
+    display: flex;
+    .container {
+        @include customLayout;
+        .header {
+            @include customHeaderTitle;
+        }
+        .content {
+            &Header {
+                display: flex;
+                @include tabletAndMobile {
+                    flex-direction: column;
+                }
+                &Left {
+                    @include customFlex50;
+                    @include tabletAndMobile {
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                        margin-bottom: 40px;
+                        padding-right: 0;
+                    }
+                    padding-right: $pd-16;
+                    .contentHeaderTitle {
+                        @include customTextInformation;
+                        margin-bottom: 24px;
+                    }
+                    .contentHeaderInformation {
+                        display: flex;
+                        flex-direction: column;
+                        span {
+                            @include fontInter;
+                            font-size: 1.6em;
+                            margin-bottom: 20px;
+                            font-weight: 500;
+                            color: $color-white;
+                            @include small {
+                                line-height: 1.8em;
+                                margin-bottom: 6px;
+                            }
+                            label {
+                                color: #cbcbcb;
+                            }
+                            strong {
+                                word-break: break-all;
+                                a {
+                                    color: $color-white;
+                                }
+                            }
+                        }
+                    }
+                    .contentHeaderButton {
+                        @include small {
+                            margin-top: 12px;
+                        }
+                        .contentHeaderMyCv {
+                            --borderRadius: 50px;
+                            --widthBorder: 58px;
+                            max-width: 230px;
+                            min-width: 230px;
+                            max-height: 60px;
+                            display: block;
+                            padding: 20px 26px;
+                            background-color: transparent;
+                            border: 1px solid $color-purple;
+                            color: $color-white;
+                            position: relative;
+                            border-radius: var(--borderRadius);
+                            overflow: hidden;
+                            height: 100%;
+                            text-align: right;
+                            &::before {
+                                border-radius: var(--borderRadius);
+                                @include colorGradientCustom(left);
+                                transition: 0.2s linear;
+                                content: '';
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                bottom: 0;
+                                width: 58px;
+                            }
+                            &:hover::before {
+                                width: 100%;
+                            }
+                            &:hover {
+                                .contentHeaderButtonIcon {
+                                    border-radius: var(--borderRadius);
+                                    left: calc(100% - var(--widthBorder));
+                                }
+                                .contentHeaderButtonTitle {
+                                    right: 30%;
+                                }
+                            }
+                            .contentHeaderButtonIcon {
+                                transition: 0.2s linear;
+                                @include colorGradientCustom(right);
+                                position: absolute;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                top: 0;
+                                left: 0;
+                                font-size: 2em;
+                                width: var(--widthBorder);
+                                height: 58px;
+                                border-radius: 50% 50%;
+                                font-weight: 900;
+                                stroke-width: 301px;
+                            }
+                            .contentHeaderButtonTitle {
+                                transition: 0.2s linear;
+                                @include fontPoppins;
+                                font-weight: 700;
+                                font-size: 1.6em;
+                                text-transform: uppercase;
+                                user-select: none;
+                                position: absolute;
+                                right: 10%;
+                            }
+                            .contentHeaderButtonLayout {
+                                @include fontPoppins;
+                                font-weight: 700;
+                                font-size: 1.6em;
+                                text-transform: uppercase;
+                                visibility: hidden;
+                            }
+                        }
+                    }
+                }
+                &Right {
+                    @include customFlex50;
+                    @include tabletAndMobile {
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                        padding-left: 0;
+                    }
+                    padding-left: $pd-16;
+                    display: flex;
+                    flex-direction: column;
+                    .contentHeaderRightItem {
+                        margin-bottom: 30px;
+                        padding: 40px;
+                        border-radius: $borderRadius;
+                        position: relative;
+                        background-color: #191a28;
+                        @include fontRoboto;
+                        &:before {
+                            --borderItem: 4px;
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width: calc(100% + var(--borderItem));
+                            height: calc(100% + var(--borderItem));
+                            z-index: -1;
+                            background-image: linear-gradient(
+                                var(--rotate),
+                                #ff56f6 27.04%,
+                                #406aff 101.43%,
+                                #3bace2 100.63%,
+                                #b936ee 100%
+                            );
+                            border-radius: inherit;
+                            animation: spinColor 5s linear infinite;
+                        }
+                        span {
+                            line-height: 1.4em;
+                            word-break: break-all;
+                        }
+                        span:first-child {
+                            @include fontPoppins;
+                            @include colorTextGradient;
+                            margin: 0;
+                            font-weight: 700;
+                            font-size: 5em;
+                            display: flex;
+                            margin-bottom: 8px;
+                            &::after {
+                                content: '+';
+                                font-size: 34px;
+                            }
+                        }
+                        span:last-child {
+                            display: block;
+                            color: $color-white;
+                            padding-left: 50px;
+                            font-size: 1.5em;
+                            position: relative;
+                            letter-spacing: 4px;
+                            font-weight: 500;
+                            &::before {
+                                position: absolute;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                left: 0;
+                                content: '';
+                                width: 36px;
+                                height: 2px;
+                                background-color: #cccc;
+                            }
+                        }
+                    }
+                }
+            }
+            .contentLine {
+                display: flex;
+                justify-content: center;
+                user-select: none;
+                div {
+                    width: 50%;
+                    height: 1px;
+                    background-color: rgba(97, 97, 97, 0.2);
+                    margin: 80px 0 55px 0;
+                    text-align: center;
+                    border-radius: 10px;
+                }
+            }
+            .contentBody {
+                h1 {
+                    @include customTextInformation;
+                    text-align: center;
+                    text-transform: uppercase;
+                    margin: 0 0 40px 0;
+                }
+                .contentBodySkills {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 40px 0;
+                    .contentBodySkill {
+                        flex: 0 0 25%;
+                        max-width: 25%;
+                        @include small {
+                            flex: 0 0 33.33333333%;
+                            max-width: 33.33333333%;
+                        }
+                        @include contentSkillSmall {
+                            flex: 0 0 50%;
+                            max-width: 50%;
+                        }
+                        @include contentSkillExtraSmall {
+                            flex: 0 0 100%;
+                            max-width: 100%;
+                        }
+                        font-size: 2em;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        opacity: 0;
+                        transition: 0.8s ease-in-out;
+                        transform: translateY(50px);
+                        opacity: 0;
+                        &.active {
+                            transform: translateY(0px);
+                            opacity: 1;
+                        }
+                        .contentBodyLogo {
+                            background-color: #191a28;
+                            width: 120px;
+                            height: 120px;
+                            position: relative;
+                            border-radius: 50%;
+                            margin-bottom: 14px;
+                            z-index: 1;
+                            transition: 0.3s ease;
+                            @include extraLarge {
+                                width: 110px;
+                                height: 110px;
+                            }
+                            @include medium {
+                                width: 100px;
+                                height: 100px;
+                            }
+                            @include small {
+                                width: 100px;
+                                height: 100px;
+                            }
+                            &:hover {
+                                transform: scale(1.08);
+                                &::before {
+                                    content: '';
+                                    @include colorGradientCustom(left);
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    width: 110%;
+                                    height: 110%;
+                                    filter: blur(120px);
+                                    z-index: -1;
+                                    border-radius: 50%;
+                                }
+                            }
+                            img {
+                                position: absolute;
+                                width: 76%;
+                                height: 76%;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                            }
+                        }
+                        h3 {
+                            text-align: center;
+                            font-size: 0.8em;
+                            text-transform: uppercase;
+                            color: $color-white;
+                            font-weight: 400;
+                            @include fontInter;
+                        }
+                    }
+                }
+            }
+            .contentFooter {
+                @include tabletAndMobile {
+                    padding-bottom: 120px;
+                }
+                h1 {
+                    @include customTextInformation;
+                    text-align: center;
+                    text-transform: uppercase;
+                    margin: 0 0 40px 0;
+                }
+                .contentFooterYears {
+                    --maxWidth: 45%;
+                    display: flex;
+                    justify-content: space-between;
+                    @include medium {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    @include small {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    .contentFooterYearsLeft {
+                        transform: translateX(-20px);
+                        &.active {
+                            transform: translateX(0px);
+                            opacity: 1;
+                        }
+                    }
+                    .contentFooterYearsRight {
+                        transform: translateX(20px);
+                        &.active {
+                            transform: translateX(0px);
+                            opacity: 1;
+                        }
+                    }
+                    .contentFooterYearsLeft,
+                    .contentFooterYearsRight {
+                        flex: 0 0 var(--maxWidth);
+                        max-width: var(--maxWidth);
+                        @include medium {
+                            flex: 0 0 100%;
+                            max-width: 100%;
+                        }
+                        @include small {
+                            flex: 0 0 100%;
+                            max-width: 100%;
+                        }
+                        transition: 0.8s ease-in-out;
+                        opacity: 0;
+                    }
+                    .contentYear {
+                        color: $color-white;
+                        display: flex;
+                        margin-bottom: 40px;
+                        .contentYearIcons {
+                            position: relative;
+                            margin-right: 20px;
+                            .contentYearIcon {
+                                @include colorGradientCustom(right);
+                                height: 50px;
+                                min-width: 50px;
+                                max-width: 50px;
+                                border-radius: 50%;
+                                display: flex;
+                                .contentYearIconItem {
+                                    margin: auto;
+                                    font-size: 2em;
+                                }
+                            }
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                bottom: 0px;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                width: 2px;
+                                height: calc(100% - 50px);
+                                background-color: rgba(211, 209, 209, 0.3);
+                            }
+                        }
+                        .contentYearTitle {
+                            span {
+                                background-color: rgba(25, 26, 40, 0.5);
+                                padding: 8px 10px;
+                                border-radius: 20px;
+                                display: inline-flex;
+                                align-items: center;
+                                margin-bottom: 12px;
+                                font-size: 1.2em;
+                                font-weight: 600;
+                                color: #d3d1d1;
+                                @include fontPoppins;
+                            }
+                            h2 {
+                                margin-bottom: 10px;
+                                font-size: 1.8em;
+                                @include fontOpenSans;
+                                line-height: 1.4em;
+                            }
+                            p {
+                                font-size: 1.4em;
+                                line-height: 1.6em;
+                                @include fontInter;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .fadeInUp {
+            animation: fadeInUp 0.8s ease-in-out forwards;
+            opacity: 0;
+        }
+    }
+}

@@ -1,0 +1,146 @@
+@import '../../variants.module.scss';
+@import '../../animation.module';
+@property --rotate {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: true;
+}
+.contact {
+    $pd-16: 16px;
+    display: flex;
+    transition: 0.8s all linear;
+    .container {
+        display: flex;
+        flex-direction: column;
+        @include customLayout;
+        .header {
+            @include customHeaderTitle;
+        }
+        .content {
+            display: flex;
+            @include tabletAndMobile {
+                flex-direction: column;
+            }
+            &HeaderLeft {
+                flex: 0 0 40%;
+                max-width: 40%;
+                @include tabletAndMobile {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    padding-right: 0;
+                }
+                padding-right: $pd-16;
+                .contentItem {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 28px;
+                    &Icon {
+                        font-size: 4.2em;
+                        color: $color-purple;
+                        margin-right: 16px;
+                    }
+                    &Title {
+                        @include fontInter;
+                        h3 {
+                            color: #cbcbcb;
+                            font-size: 1.6em;
+                            font-weight: 600;
+                            margin-bottom: 8px;
+                            text-transform: uppercase;
+                        }
+                        a,
+                        p {
+                            word-break: break-all;
+                            color: $color-white;
+                            font-size: 1.4em;
+                            font-weight: 700;
+                            line-height: 1.6em;
+                        }
+                        a {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+            &HeaderRight {
+                flex: 0 0 60%;
+                max-width: 60%;
+                @include tabletAndMobile {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    margin-top: 16px;
+                    padding-bottom: 120px;
+                    padding-left: 0;
+                }
+                padding-left: $pd-16;
+                .textarea {
+                    height: 120px;
+                }
+                .formGroup {
+                    $borderWidthHeight: 2px;
+                    margin-bottom: 26px;
+                    user-select: none;
+                    position: relative;
+                    &::after {
+                        @include colorGradientCustom(right);
+                        position: absolute;
+                        content: '';
+                        left: calc($borderWidthHeight / -2);
+                        top: calc($borderWidthHeight / -2);
+                        width: calc(100% + $borderWidthHeight);
+                        height: calc(100% + $borderWidthHeight);
+                        z-index: -1;
+                        border: none;
+                        border-radius: $borderRadius;
+                    }
+                    textarea,
+                    input {
+                        @include fontInter;
+                        padding: 20px 30px;
+                        width: 100%;
+                        outline: none;
+                        border: none;
+                        font-size: 1.5em;
+                        background-color: rgba(25, 26, 40, 1);
+                        color: $color-white;
+                        border-radius: $borderRadius;
+                    }
+                    textarea::placeholder,
+                    input::placeholder {
+                        text-transform: uppercase;
+                    }
+                    textarea {
+                        resize: none;
+                        height: 100%;
+                    }
+                }
+                .error {
+                    color: #9c3f3d;
+                    margin-top: 16px;
+                    font-size: 1.6em;
+                    background-color: #f2dede;
+                    // padding: 14px 16px;
+                    border-radius: $borderRadius;
+                    font-weight: 600;
+                    border: none;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+    .notificationMessage {
+        position: fixed;
+        top: 80px;
+        right: 10px;
+        .message {
+            @include fontInter;
+            margin-bottom: 8px;
+            background-color: #dff0d8;
+            color: #3c763d;
+            font-size: 1.6em;
+            padding: 20px 16px;
+            border-radius: $borderRadius;
+            animation: fadeInLeft 0.8s ease-in-out, fadeInLeft 0.8s 3s reverse forwards;
+        }
+    }
+}

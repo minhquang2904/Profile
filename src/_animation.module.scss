@@ -1,0 +1,87 @@
+@keyframes fadeInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUpLeft {
+    from {
+        transform: translate(-50px, 50px);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUpRight {
+    from {
+        transform: translate(50px, 50px);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        transform: translateX(140%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes spinColor {
+    from {
+        --rotate: 0deg;
+    }
+    to {
+        --rotate: 360deg;
+    }
+}
+
+@keyframes cursor {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@keyframes typing {
+    0% {
+        width: 100%;
+    }
+    70% {
+        width: 0%;
+    }
+}
+
+@keyframes flicker {
+    0% {
+        border-color: #9e00b0;
+    }
+    100% {
+        border-color: transparent;
+    }
+}

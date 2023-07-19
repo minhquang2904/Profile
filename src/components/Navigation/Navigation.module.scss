@@ -1,0 +1,66 @@
+@import '../../style.module.scss';
+.nav {
+    position: fixed;
+    right: 0%;
+    bottom: 50%;
+    transform: translateY(50%);
+    border-radius: 50px;
+    padding: 14px 16px;
+    overflow: hidden;
+    max-width: 480px;
+    z-index: 1000;
+    margin-left: 20px;
+    @include navResponsive {
+        background-color: #191a28;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        transform: unset;
+        width: 100%;
+        margin-left: unset;
+        border-radius: unset;
+        min-width: 100vw;
+        .blur {
+            position: absolute;
+            filter: blur(100px);
+            background-color: rgba(26, 24, 26, 0.2);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 45px 0;
+        @include navResponsive {
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        li {
+            list-style-type: none;
+            .link {
+                padding: 16px;
+                border-radius: 50%;
+                display: block;
+                transition: 0.2s linear;
+                &.activeBg {
+                    background: $color-gradient;
+                }
+                &:hover {
+                    background-color: rgba(66, 60, 66, 0.4);
+                }
+                .icon {
+                    position: relative;
+                    font-size: 18px;
+                    color: #694e74;
+                    &.activeIcon {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

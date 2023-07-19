@@ -1,0 +1,109 @@
+@import './responsive.module';
+$color-white: #ffffff;
+$color-black: #000000;
+$color-purple: #9e00b0;
+$borderRadius: 6px;
+$color-gradient: linear-gradient(92.23deg, #406aff 21.43%, #3bace2 50.63%, #b936ee 100%, #ff56f6 117.04%);
+$layout-maxWidthExtraLarge: 1140px;
+$layout-maxWidthLarge: 1000px;
+$layout-maxWidthMedium: 860px;
+$layout-maxWidthSmall: 800px;
+
+@mixin colorGradientCustom($pos) {
+    background: linear-gradient(to $pos, #ff56f6 27.04%, #406aff 101.43%, #3bace2 100.63%, #b936ee 100%);
+}
+
+@mixin fontRoboto {
+    font-family: 'Roboto', sans-serif !important;
+}
+
+@mixin fontOpenSans {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+@mixin fontInter {
+    font-family: 'Inter', sans-serif !important;
+}
+
+@mixin fontPoppins {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+@mixin colorTextGradient {
+    background: -webkit-linear-gradient(left, #ff56f6 27.04%, #406aff 101.43%, #3bace2 100.63%, #b936ee 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin customHeaderTitle {
+    margin: auto;
+    padding: 80px 0;
+    .headerTitle {
+        text-align: center;
+        span {
+            transform: translate(-50%, -50%);
+            color: $color-black;
+            font-size: 5.4em;
+            text-align: center;
+            color: $color-white;
+            font-weight: 900;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            user-select: none;
+            @include fontOpenSans;
+            @include extraLarge {
+                font-size: 5em;
+            }
+            @include medium {
+                font-size: 4.6em;
+            }
+            @include small {
+                font-size: 4em;
+            }
+            &:last-child {
+                @include colorTextGradient;
+            }
+        }
+    }
+}
+
+@mixin customFlex50 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+@mixin maxWidthLayoutExtraLarge {
+    margin: auto;
+    max-width: $layout-maxWidthExtraLarge;
+    width: 100%;
+    padding: 0 16px;
+    transition: 0.6s;
+}
+
+@mixin customLayout {
+    @include maxWidthLayoutExtraLarge;
+    @include extraExtraLarge {
+        max-width: $layout-maxWidthLarge;
+    }
+    @include extraLarge {
+        max-width: $layout-maxWidthMedium;
+    }
+    @include tabletAndMobile {
+        padding: 0 28px;
+    }
+    @include large {
+        max-width: $layout-maxWidthSmall;
+    }
+}
+
+@mixin customTextInformation {
+    @include fontOpenSans;
+    font-size: 2.8em;
+    color: $color-white;
+    @include extraLarge {
+        font-size: 2.6em;
+    }
+    @include small {
+        font-size: 2em;
+    }
+}
