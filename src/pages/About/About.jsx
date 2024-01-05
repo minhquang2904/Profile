@@ -120,7 +120,7 @@ function About() {
                                     <span>YEARS OF EXPERIENCE</span>
                                 </div>
                                 <div className={style.contentHeaderRightItem}>
-                                    <span>1</span>
+                                    <span>2</span>
                                     <span>COMPLETED PROJECTS</span>
                                 </div>
                             </motion.div>
