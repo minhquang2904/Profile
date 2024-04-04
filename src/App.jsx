@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import HomePage from './pages/Home/Home'

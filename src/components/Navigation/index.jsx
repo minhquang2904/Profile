@@ -1,3 +1,4 @@
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { HomeOutlined, MessageOutlined, UserOutlined, ContainerOutlined } from '@ant-design/icons'
 import clsx from 'clsx'
@@ -7,6 +8,7 @@ function Navigation() {
         const activeLink = isActive ? style.activeBg : ''
         return clsx(style.link, activeLink)
     }
+    console.log('re-render')
     return (
         <nav className={style.nav}>
             <div className={style.blur}></div>
@@ -61,4 +63,4 @@ function Navigation() {
     )
 }
 
-export default Navigation
+export default React.memo(Navigation)
