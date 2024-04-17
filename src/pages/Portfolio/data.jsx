@@ -37,7 +37,7 @@ const data = [
         description:
             'Sử dụng kiến thức đã học như HTML5, CSS3 để clone website giúp ôn lại các kiến thức, áp dụng thêm những công nghệ mới như SCSS giúp viết CSS như một ngôn ngữ lập trình, dễ bảo trì và Javascript để viết các sự kiện cho website.',
         github: 'https://github.com/minhquang2904/Wavo',
-        demo: 'http://minhquangdev.wavo.surge.sh/',
+        demo: 'http://minhquangdev.surge.sh/',
         skills: [htmlLogo, cssLogo, jsLogo, scssLogo],
     },
     {
