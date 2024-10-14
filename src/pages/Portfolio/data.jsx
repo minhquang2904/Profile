@@ -18,6 +18,17 @@ import {
     profile4,
     travel1,
     travel2,
+    myStore1,
+    myStore2,
+    myStore3,
+    myStore4,
+    myStore5,
+    nextjs,
+    python,
+    vercel,
+    tailwindcss,
+    cloundinnary,
+    mongoDB,
 } from '../../index'
 
 const data = [
@@ -49,6 +60,16 @@ const data = [
         github: 'https://github.com/minhquang2904/Profile',
         demo: '',
         skills: [reactLogo, framerMotion, reactRouter, vite, scssLogo],
+    },
+    {
+        image: [myStore1, myStore2, myStore3, myStore4, myStore5],
+        name: 'My Store',
+        subname: 'MY STORE WEBSITE',
+        description:
+            'Website bán hàng dựa vào hành vi của người dùng như lịch sử mua hàng để gợi ý các sản phẩm phù hợp để tăng khả năng mua hàng của người dùng',
+        github: 'https://github.com/minhquang2904/store',
+        demo: 'https://my-store-ten-sand.vercel.app/',
+        skills: [nextjs, python, scssLogo, vercel, tailwindcss, cloundinnary, mongoDB],
     },
 ]
 

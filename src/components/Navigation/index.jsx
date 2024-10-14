@@ -8,7 +8,6 @@ function Navigation() {
         const activeLink = isActive ? style.activeBg : ''
         return clsx(style.link, activeLink)
     }
-    console.log('re-render')
     return (
         <nav className={style.nav}>
             <div className={style.blur}></div>

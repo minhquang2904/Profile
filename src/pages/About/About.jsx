@@ -17,6 +17,9 @@ import {
     bootstrap,
     jquery,
     framerMotion,
+    nextjs,
+    python,
+    mongoDB,
 } from '../../index'
 
 const animatedLeftRight = {
@@ -120,7 +123,7 @@ function About() {
                                     <span>YEARS OF EXPERIENCE</span>
                                 </div>
                                 <div className={style.contentHeaderRightItem}>
-                                    <span>2</span>
+                                    <span>4</span>
                                     <span>COMPLETED PROJECTS</span>
                                 </div>
                             </motion.div>
@@ -160,6 +163,24 @@ function About() {
                                         <img src={jsLogo} alt="IMAGE" style={{ width: '65%', height: '65%' }} />
                                     </div>
                                     <h3>Javascript</h3>
+                                </div>
+                                <div className={style.contentBodySkill}>
+                                    <div className={style.contentBodyLogo}>
+                                        <img src={nextjs} alt="IMAGE" />
+                                    </div>
+                                    <h3>Next.js</h3>
+                                </div>
+                                <div className={style.contentBodySkill}>
+                                    <div className={style.contentBodyLogo}>
+                                        <img src={python} alt="IMAGE" />
+                                    </div>
+                                    <h3>Python</h3>
+                                </div>
+                                <div className={style.contentBodySkill}>
+                                    <div className={style.contentBodyLogo}>
+                                        <img src={mongoDB} alt="IMAGE" style={{ width: '80%', height: '80%' }} />
+                                    </div>
+                                    <h3>Mongo</h3>
                                 </div>
                                 <div className={style.contentBodySkill}>
                                     <div className={style.contentBodyLogo}>
